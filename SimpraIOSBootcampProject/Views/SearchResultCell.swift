@@ -21,10 +21,11 @@ class SearchResultCell: UICollectionViewCell {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Game Name"
+        label.font = .systemFont(ofSize: 16, weight: .bold)
         return label
     }()
 //    TODO: Specialize from data to name
-    let categoryLabel: UILabel = {
+    let releaseTimeLabel: UILabel = {
         let label = UILabel()
         label.text = "Kind of Game"
         return label
@@ -64,7 +65,7 @@ class SearchResultCell: UICollectionViewCell {
         let infoTopstackView = UIStackView(arrangedSubviews: [
         gameIconImageView,
         VerticalStackView(arrangedSubviews: [
-            nameLabel, categoryLabel, ratingLabel
+            nameLabel, releaseTimeLabel, ratingLabel
         ]),
         getButton
         ])
