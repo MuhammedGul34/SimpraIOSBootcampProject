@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 class GamesSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -59,10 +59,7 @@ class GamesSearchController: UICollectionViewController, UICollectionViewDelegat
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
         
-        let gameResults = gameResults[indexPath.item]
-        cell.nameLabel.text = gameResults.name
-        cell.releaseTimeLabel.text = "Released:\(gameResults.released)"
-        cell.ratingLabel.text = "Rating:\(String(gameResults.rating))"
+        cell.gameResults = gameResults[indexPath.item]
         return cell
     }
     
