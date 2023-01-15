@@ -23,34 +23,29 @@ class GamesSearchController: UICollectionViewController, UICollectionViewDelegat
 
     }
 
+    fileprivate var gameResults = [Result]()
+    
+    // 1- Populate our cells with our games data
+    // 2- Extract this function fetchGames() ouyside of this controller file
+    
     fileprivate func fetchGames(){
-        let urlString =
-    "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174"
         
-        guard let url = URL(string: urlString) else { return }
-        
-        // fetch data from internet
-        URLSession.shared.dataTask(with: url) { data, resp, err in
-            if let err = err {
-                print("Failed to fetch apps:", err)
+
+        Service.shared.fetchGames { results, error in
+            
+            if let error = error {
+                print("Failed to fetch apps:", error)
                 return
             }
             
-            // success
-//            print(data)
-//            print(String(data: data!, encoding: .utf8))
-            
-            guard let data = data else {return}
-            
-            do {
-                
-                let searchResult = try JSONDecoder().decode(SearchResults.self, from: data)
-                searchResult.results?.forEach({ print($0.name)
-                })
-            } catch let jsonErr {
-                print("Failed to decode json:", jsonErr)
+            self.gameResults = results
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
-        }.resume()
+        }
+        
+//        we need to get back our search results
+//        use a complation block 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -58,12 +53,16 @@ class GamesSearchController: UICollectionViewController, UICollectionViewDelegat
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return gameResults.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
-        cell.nameLabel.text = "Here is my game"
+        
+        let gameResults = gameResults[indexPath.item]
+        cell.nameLabel.text = gameResults.name
+        cell.releaseTimeLabel.text = "Released:\(gameResults.released)"
+        cell.ratingLabel.text = "Rating:\(String(gameResults.rating))"
         return cell
     }
     

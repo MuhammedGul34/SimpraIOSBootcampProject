@@ -5,19 +5,23 @@
 //  Created by Muhammed Gül on 15.01.2023.
 //
 
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let searchResults = try? JSONDecoder().decode(SearchResults.self, from: jsonData)
+
 import Foundation
 
-// MARK: - Search Results
+// MARK: - SearchResults
 struct SearchResults: Codable {
-    let count: Int?
-    let next: String?
-    let previous: JSONNull?
-    let results: [Result]?
-    let seoTitle, seoDescription, seoKeywords, seoH1: String?
-    let noindex, nofollow: Bool?
-    let description: String?
-    let filters: Filters?
-    let nofollowCollections: [String]?
+    let count: Int
+    let next, previous: String
+    let results: [Result]
+    let seoTitle, seoDescription, seoKeywords, seoH1: String
+    let noindex, nofollow: Bool
+    let description: String
+    let filters: Filters
+    let nofollowCollections: [String]
 
     enum CodingKeys: String, CodingKey {
         case count, next, previous, results
@@ -32,49 +36,50 @@ struct SearchResults: Codable {
 
 // MARK: - Filters
 struct Filters: Codable {
-    let years: [FiltersYear]?
+    let years: [FiltersYear]
 }
 
 // MARK: - FiltersYear
 struct FiltersYear: Codable {
-    let from, to: Int?
-    let filter: String?
-    let decade: Int?
-    let years: [YearYear]?
-    let nofollow: Bool?
-    let count: Int?
+    let from, to: Int
+    let filter: String
+    let decade: Int
+    let years: [YearYear]
+    let nofollow: Bool
+    let count: Int
 }
 
 // MARK: - YearYear
 struct YearYear: Codable {
-    let year, count: Int?
-    let nofollow: Bool?
+    let year, count: Int
+    let nofollow: Bool
 }
 
 // MARK: - Result
 struct Result: Codable {
-    let id: Int?
-    let slug, name, released: String?
-    let tba: Bool?
-    let backgroundImage: String?
-    let rating: Double?
-    let ratingTop: Int?
-    let ratings: [Rating]?
-    let ratingsCount, reviewsTextCount, added: Int?
-    let addedByStatus: AddedByStatus?
-    let metacritic, playtime, suggestionsCount: Int?
-    let updated: String?
+    let id: Int
+    let slug, name, released: String
+    let tba: Bool
+    let backgroundImage: String
+    let rating: Double
+    let ratingTop: Int
+    let ratings: [Rating]
+    let ratingsCount, reviewsTextCount, added: Int
+    let addedByStatus: AddedByStatus
+    let metacritic: Int?
+    let playtime, suggestionsCount: Int
+    let updated: String
     let userGame: JSONNull?
-    let reviewsCount: Int?
-    let saturatedColor, dominantColor: Color?
-    let platforms: [PlatformElement]?
-    let parentPlatforms: [ParentPlatform]?
-    let genres: [Genre]?
-    let stores: [Store]?
+    let reviewsCount: Int
+    let saturatedColor, dominantColor: Color
+    let platforms: [PlatformElement]
+    let parentPlatforms: [ParentPlatform]
+    let genres: [Genre]
+    let stores: [Store]
     let clip: JSONNull?
-    let tags: [Genre]?
+    let tags: [Genre]
     let esrbRating: EsrbRating?
-    let shortScreenshots: [ShortScreenshot]?
+    let shortScreenshots: [ShortScreenshot]
 
     enum CodingKeys: String, CodingKey {
         case id, slug, name, released, tba
@@ -103,8 +108,8 @@ struct Result: Codable {
 
 // MARK: - AddedByStatus
 struct AddedByStatus: Codable {
-    let yet, owned, beaten, toplay: Int?
-    let dropped, playing: Int?
+    let yet, owned, beaten, toplay: Int
+    let dropped, playing: Int
 }
 
 enum Color: String, Codable {
@@ -113,16 +118,16 @@ enum Color: String, Codable {
 
 // MARK: - EsrbRating
 struct EsrbRating: Codable {
-    let id: Int?
-    let name, slug: String?
+    let id: Int
+    let name, slug: String
 }
 
 // MARK: - Genre
 struct Genre: Codable {
-    let id: Int?
-    let name, slug: String?
-    let gamesCount: Int?
-    let imageBackground: String?
+    let id: Int
+    let name, slug: String
+    let gamesCount: Int
+    let imageBackground: String
     let domain: Domain?
     let language: Language?
 
@@ -152,13 +157,13 @@ enum Language: String, Codable {
 
 // MARK: - ParentPlatform
 struct ParentPlatform: Codable {
-    let platform: EsrbRating?
+    let platform: EsrbRating
 }
 
 // MARK: - PlatformElement
 struct PlatformElement: Codable {
-    let platform: PlatformPlatform?
-    let releasedAt: String?
+    let platform: PlatformPlatform
+    let releasedAt: String
     let requirementsEn, requirementsRu: Requirements?
 
     enum CodingKeys: String, CodingKey {
@@ -171,12 +176,12 @@ struct PlatformElement: Codable {
 
 // MARK: - PlatformPlatform
 struct PlatformPlatform: Codable {
-    let id: Int?
-    let name, slug: String?
+    let id: Int
+    let name, slug: String
     let image, yearEnd: JSONNull?
     let yearStart: Int?
-    let gamesCount: Int?
-    let imageBackground: String?
+    let gamesCount: Int
+    let imageBackground: String
 
     enum CodingKeys: String, CodingKey {
         case id, name, slug, image
@@ -189,15 +194,16 @@ struct PlatformPlatform: Codable {
 
 // MARK: - Requirements
 struct Requirements: Codable {
-    let minimum, recommended: String?
+    let minimum: String
+    let recommended: String?
 }
 
 // MARK: - Rating
 struct Rating: Codable {
-    let id: Int?
-    let title: Title?
-    let count: Int?
-    let percent: Double?
+    let id: Int
+    let title: Title
+    let count: Int
+    let percent: Double
 }
 
 enum Title: String, Codable {
@@ -209,19 +215,19 @@ enum Title: String, Codable {
 
 // MARK: - ShortScreenshot
 struct ShortScreenshot: Codable {
-    let id: Int?
-    let image: String?
+    let id: Int
+    let image: String
 }
 
 // MARK: - Store
 struct Store: Codable {
-    let id: Int?
-    let store: Genre?
+    let id: Int
+    let store: Genre
 }
 
 // MARK: - Encode/decode helpers
 
-class JSONNull: Codable, Hashable {
+class JSONNull: Codable {
 
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
