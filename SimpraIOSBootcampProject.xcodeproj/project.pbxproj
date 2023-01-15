@@ -19,6 +19,7 @@
 		2E409CE22971622B005534DF /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E409CE12971622B005534DF /* SearchResultCell.swift */; };
 		2E409CE529716CF0005534DF /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E409CE429716CF0005534DF /* UIView+Layout.swift */; };
 		2E409CE72971783B005534DF /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E409CE62971783B005534DF /* VerticalStackView.swift */; };
+		2E409D1829740E0D005534DF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E409D1729740E0D005534DF /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2E409CE12971622B005534DF /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		2E409CE429716CF0005534DF /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		2E409CE62971783B005534DF /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		2E409D1729740E0D005534DF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				2E409CDC2971596A005534DF /* GamesSearchController.swift */,
 				2E409CD929713F82005534DF /* BaseTabBarController.swift */,
+				2E409D1729740E0D005534DF /* Model.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				2E409CE22971622B005534DF /* SearchResultCell.swift in Sources */,
 				2E409CCD29706B23005534DF /* SimpraIOSBootcampProject.xcdatamodeld in Sources */,
 				2E409CDD2971596A005534DF /* GamesSearchController.swift in Sources */,
+				2E409D1829740E0D005534DF /* Model.swift in Sources */,
 				2E409CC729706B23005534DF /* ViewController.swift in Sources */,
 				2E409CDA29713F82005534DF /* BaseTabBarController.swift in Sources */,
 				2E409CC329706B23005534DF /* AppDelegate.swift in Sources */,
