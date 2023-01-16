@@ -7,14 +7,37 @@
 
 import UIKit
 
+
 class SearchResultCell: UICollectionViewCell {
+    
+    var gameResults: Result! {
+        didSet {
+            nameLabel.text = gameResults.name
+            releaseTimeLabel.text = "Released:\(gameResults.released)"
+            ratingLabel.text = "Rating:\(String(gameResults.rating))"
+            
+            let url = URL(string: gameResults.backgroundImage)
+            gameIconImageView.sd_setImage(with: url)
+            
+            screenshot1ImageView.sd_setImage(with: URL(string: gameResults.shortScreenshots[0].image))
+            
+            if gameResults.shortScreenshots.count > 1{
+                screenshot2ImageView.sd_setImage(with: URL(string: gameResults.shortScreenshots[1].image))
+            }
+            if gameResults.shortScreenshots.count > 2{
+                screenshot3ImageView.sd_setImage(with: URL(string: gameResults.shortScreenshots[2].image))
+            }
+        }
+    }
+    
     
     let gameIconImageView : UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .red
+        iv.backgroundColor = UIColor(white: 0.95, alpha: 1)
         iv.widthAnchor.constraint(equalToConstant: 64).isActive = true
         iv.heightAnchor.constraint(equalToConstant: 64).isActive = true
         iv.layer.cornerRadius = 12
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -55,7 +78,12 @@ class SearchResultCell: UICollectionViewCell {
     
     func createScreenShotImageView() -> UIImageView {
         let imageView = UIImageView()
-        imageView.backgroundColor = .blue
+        imageView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 0.5
+        imageView.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }
     
