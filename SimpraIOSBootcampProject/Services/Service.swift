@@ -10,10 +10,10 @@ import Foundation
 class Service {
     static let shared = Service() // using singleton
     
-    func fetchGames(completion: @escaping ([Result], Error?) -> ()) {
+    func fetchGames(searchTerm: String, completion: @escaping ([Result], Error?) -> ()) {
         let urlString =
     "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&page=2&search="
-
+// TODO: Search Term adding
         guard let url = URL(string: urlString) else { return }
 
         // fetch data from internet
