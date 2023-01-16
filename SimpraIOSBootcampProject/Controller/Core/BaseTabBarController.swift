@@ -18,9 +18,9 @@ class BaseTabBarController: UITabBarController {
         super.viewDidLoad()
         
         viewControllers = [
+        createNavController(viewController: GamesController(), title: "Games", imageName: "apps"),
         createNavController(viewController: GamesSearchController(), title: "Search", imageName: "search"),
         createNavController(viewController: UIViewController(), title: "Today", imageName: "today_icon"),
-        createNavController(viewController: UIViewController(), title: "Games", imageName: "apps"),
         ]
     }
     fileprivate func createNavController(viewController: UIViewController, title: String, imageName: String) -> UIViewController {
