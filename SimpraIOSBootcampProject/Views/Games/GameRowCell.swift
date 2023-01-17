@@ -12,7 +12,7 @@ class GameRowCell: UICollectionViewCell {
     let imageView = UIImageView(cornerRadius: 8)
     
     let nameLabel = UILabel(text: "Game Name", font: .systemFont(ofSize: 20))
-    let companyLabel = UILabel(text: "Company Name", font: .systemFont(ofSize: 13))
+    let released = UILabel(text: "Company Name", font: .systemFont(ofSize: 13))
     
     let getButton = UIButton(title: "GET")
     
@@ -30,7 +30,7 @@ class GameRowCell: UICollectionViewCell {
         getButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         getButton.layer.cornerRadius = 32 / 2
         
-        let stackView = UIStackView(arrangedSubviews: [imageView, VerticalStackView(arrangedSubviews: [nameLabel, companyLabel]) , getButton
+        let stackView = UIStackView(arrangedSubviews: [imageView, VerticalStackView(arrangedSubviews: [nameLabel, released]) , getButton
         ])
         stackView.spacing = 16
         stackView.alignment = .center

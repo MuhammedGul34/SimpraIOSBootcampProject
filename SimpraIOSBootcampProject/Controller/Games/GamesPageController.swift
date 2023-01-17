@@ -23,12 +23,19 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         fetchData()
         
     }
+    
+    // TODO: Editors Choice Assigment
+    var editorsChoiceGames: SearchResults?
+    
     fileprivate func fetchData(){
         Service.shared.fetchGames { gameGroup, err in
             if let err = err {
                 print("Failed to fetch games:", err)
             }
-            print(gameGroup?.results)
+            self.editorsChoiceGames = gameGroup
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
     
@@ -42,14 +49,17 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GamesGroupCell
+        cell.titleLabel.text = editorsChoiceGames?.seoTitle
+        cell.horizontalController.gameGroup = editorsChoiceGames
+        cell.horizontalController.collectionView.reloadData()
         return cell
     }
-    
+        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 300)
     }

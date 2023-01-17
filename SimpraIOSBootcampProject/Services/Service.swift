@@ -44,7 +44,7 @@ class Service {
     func fetchGames(completion: @escaping (SearchResults?, Error?) -> ()){
         let urlString =
     "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&page=2&search="
-// TODO: Search Term adding
+// TODO: Change the api
         guard let url = URL(string: urlString) else { return }
 
         // fetch data from internet
