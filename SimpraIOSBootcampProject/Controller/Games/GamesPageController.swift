@@ -18,6 +18,18 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         collectionView.register(GamesGroupCell.self, forCellWithReuseIdentifier: cellId)
         
         collectionView.register(GamesPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        
+        
+        fetchData()
+        
+    }
+    fileprivate func fetchData(){
+        Service.shared.fetchGames { gameGroup, err in
+            if let err = err {
+                print("Failed to fetch games:", err)
+            }
+            print(gameGroup?.results)
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
