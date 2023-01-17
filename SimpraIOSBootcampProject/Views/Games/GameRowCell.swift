@@ -19,6 +19,8 @@ class GameRowCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        backgroundColor = .init(white: 0.98, alpha: 1)
+        
         imageView.backgroundColor = .purple
        
         imageView.constrainWidth(constant: 64)
