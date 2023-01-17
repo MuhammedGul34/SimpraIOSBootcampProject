@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class GamesSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class GamesSearchController: BaseListController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     fileprivate let cellId = "gameSearchCellId"
     
@@ -105,13 +105,5 @@ class GamesSearchController: UICollectionViewController, UICollectionViewDelegat
         
         cell.gameResults = gameResults[indexPath.item]
         return cell
-    }
-    
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

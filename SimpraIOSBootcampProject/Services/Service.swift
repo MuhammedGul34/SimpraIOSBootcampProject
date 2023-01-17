@@ -41,4 +41,31 @@ class Service {
         }.resume()
     }
     
+    func fetchGames(completion: @escaping (SearchResults?, Error?) -> ()){
+        let urlString =
+    "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&page=2&search="
+// TODO: Change the api
+        guard let url = URL(string: urlString) else { return }
+
+        // fetch data from internet
+        URLSession.shared.dataTask(with: url) { data, resp, err in
+            if let err = err {
+                completion(nil, err)
+                return
+            }
+            guard let data = data else {return}
+
+            do {
+
+                let gamesGroup = try JSONDecoder().decode(SearchResults.self, from: data)
+                gamesGroup.results.forEach { print($0.name)
+                    completion(gamesGroup, nil)
+                }
+         
+            } catch let jsonErr {
+                completion(nil, jsonErr)
+                print("Failed to decode json:", jsonErr)
+            }
+        }.resume()
+    }
 }
