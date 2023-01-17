@@ -11,6 +11,8 @@ class GameHorizontalController: BaseListController, UICollectionViewDelegateFlow
     
     let cellId = "cellId"
     
+    var gameGroup: SearchResults?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -22,11 +24,15 @@ class GameHorizontalController: BaseListController, UICollectionViewDelegateFlow
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return gameGroup?.results.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GameRowCell
+        let game = gameGroup?.results[indexPath.item]
+        cell.nameLabel.text = game?.name
+        cell.released.text = game?.released
+        cell.imageView.sd_setImage(with: URL(string: game?.backgroundImage ?? ""))
         return cell
     }
     
