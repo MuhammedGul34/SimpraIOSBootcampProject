@@ -13,7 +13,7 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
     let headerId = "headerId"
     var socialApps = [SocialApp]()
     let activityIndicatorView: UIActivityIndicatorView = {
-        let aiv = UIActivityIndicatorView(style: .whiteLarge)
+        let aiv = UIActivityIndicatorView(style: .large )
         aiv.color = .black
         aiv.startAnimating()
         aiv.hidesWhenStopped = true
