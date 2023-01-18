@@ -11,10 +11,20 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
     
     let cellId = "id"
     let headerId = "headerId"
+    var socialApps = [SocialApp]()
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: .whiteLarge)
+        aiv.color = .black
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         collectionView.register(GamesGroupCell.self, forCellWithReuseIdentifier: cellId)
         
         collectionView.register(GamesPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
@@ -22,6 +32,18 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         
         fetchData()
         
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.fillSuperview()
+     
+        
+        Service.shared.fetchSocialApps { apps, err in
+
+            self.socialApps = apps ?? []
+            DispatchQueue.main.async{
+                self.collectionView.reloadData()
+            }
+          
+        }
     }
     
     // TODO: Editors Choice Assigment
@@ -35,13 +57,16 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
             self.editorsChoiceGames = gameGroup
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                
+                self.activityIndicatorView.stopAnimating()
             }
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! GamesPageHeader
-        header.gameHeaderHorizontalController
+        header.gameHeaderHorizontalController.socialApps = self.socialApps
+        header.gameHeaderHorizontalController.collectionView.reloadData()
         return header
     }
     

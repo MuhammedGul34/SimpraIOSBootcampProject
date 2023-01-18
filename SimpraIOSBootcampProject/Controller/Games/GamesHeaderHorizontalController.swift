@@ -11,7 +11,7 @@ class GamesHeaderHorizontalController: HorizontalSnappingController, UICollectio
     
     let cellId = "cellId"
     
-    var headerVariable = [Header]()
+    var socialApps = [SocialApp]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +26,17 @@ class GamesHeaderHorizontalController: HorizontalSnappingController, UICollectio
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return socialApps.count
         // TODO: fetch special part and display them 
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GameHeaderCell
-        cell.companyLabel.text = "Grand Theft Auto IV"
-        cell.titleLabel.text = "What does the American Dream mean today?"
-        cell.imageView.image = UIImage(named: "grand")
+        
+        let app = self.socialApps[indexPath.item]
+        cell.companyLabel.text = app.name
+        cell.titleLabel.text = app.tagline
+        cell.imageView.sd_setImage(with: URL(string: app.imageUrl))
         return cell
     }
 }

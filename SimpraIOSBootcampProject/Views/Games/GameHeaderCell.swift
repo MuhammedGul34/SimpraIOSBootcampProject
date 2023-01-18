@@ -20,7 +20,6 @@ class GameHeaderCell: UICollectionViewCell {
         super.init(frame: frame)
         
         companyLabel.textColor = .red
-        imageView.backgroundColor = .red
         titleLabel.numberOfLines = 2
         
         let stackView = VerticalStackView(arrangedSubviews: [ companyLabel, titleLabel, imageView

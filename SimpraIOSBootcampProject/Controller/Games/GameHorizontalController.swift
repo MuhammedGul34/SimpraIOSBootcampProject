@@ -13,10 +13,14 @@ class GameHorizontalController: HorizontalSnappingController, UICollectionViewDe
     
     var gameGroup: SearchResults?
     
+    var socialApps = [SocialApp]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.register(GameRowCell.self, forCellWithReuseIdentifier: cellId)
+        
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
        
     }
