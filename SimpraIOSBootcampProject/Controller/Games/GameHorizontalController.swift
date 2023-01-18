@@ -15,7 +15,7 @@ class GameHorizontalController: BaseListController, UICollectionViewDelegateFlow
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         collectionView.register(GameRowCell.self, forCellWithReuseIdentifier: cellId)
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {

@@ -11,6 +11,8 @@ class GamesHeaderHorizontalController: BaseListController, UICollectionViewDeleg
     
     let cellId = "cellId"
     
+    var headerVariable = [Header]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,11 +32,15 @@ class GamesHeaderHorizontalController: BaseListController, UICollectionViewDeleg
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 2
+        // TODO: fetch special part and display them 
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GameHeaderCell
+        cell.companyLabel.text = "Grand Theft Auto IV"
+        cell.titleLabel.text = "What does the American Dream mean today?"
+        cell.imageView.image = UIImage(named: "grand")
         return cell
     }
 }
