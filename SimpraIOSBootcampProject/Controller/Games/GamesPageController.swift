@@ -20,11 +20,8 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         return aiv
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
         collectionView.register(GamesGroupCell.self, forCellWithReuseIdentifier: cellId)
         
         collectionView.register(GamesPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
@@ -83,6 +80,12 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         cell.titleLabel.text = editorsChoiceGames?.seoTitle
         cell.horizontalController.gameGroup = editorsChoiceGames
         cell.horizontalController.collectionView.reloadData()
+        cell.horizontalController.didSelectHandler = { [weak self] Result in
+            let controller = GameDetailController()
+            controller.navigationItem.title = Result.name
+            self?.navigationController?.pushViewController(controller, animated: true)
+            
+        }
         return cell
     }
         
