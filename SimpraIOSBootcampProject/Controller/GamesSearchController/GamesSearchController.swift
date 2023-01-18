@@ -58,7 +58,7 @@ class GamesSearchController: BaseListController, UICollectionViewDelegateFlowLay
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             // fire my search
             Service.shared.fetchGames(searchTerm: searchText) { res, err in
-                self.gameResults = res
+                self.gameResults = res?.results ?? []
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -74,14 +74,14 @@ class GamesSearchController: BaseListController, UICollectionViewDelegateFlowLay
     fileprivate func fetchGames(){
         
 
-        Service.shared.fetchGames(searchTerm: "Dota 2") { results, error in
+        Service.shared.fetchGames(searchTerm: "Dota 2") { res, error in
             
             if let error = error {
                 print("Failed to fetch apps:", error)
                 return
             }
             
-            self.gameResults = results
+            self.gameResults = res?.results ?? []
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
