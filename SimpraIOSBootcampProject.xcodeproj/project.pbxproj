@@ -38,6 +38,8 @@
 		2EAE548C2978A4FB00FF7AC8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2EAE548B2978A4FB00FF7AC8 /* Alamofire */; };
 		2EAE548E2978A82C00FF7AC8 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */; };
 		2EAE549129792C9C00FF7AC8 /* GameDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */; };
+		2EAE54932979454B00FF7AC8 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE54922979454B00FF7AC8 /* PreviewCell.swift */; };
+		2EAE5495297947A900FF7AC8 /* PreviewScreenShotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */; };
 		C0A5832F4674CA13F14F15AA /* Pods_SimpraIOSBootcampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		2EA0FC9429788B45006C1139 /* GameDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailController.swift; sourceTree = "<group>"; };
 		2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCell.swift; sourceTree = "<group>"; };
+		2EAE54922979454B00FF7AC8 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenShotsController.swift; sourceTree = "<group>"; };
 		A8E239A27FA391A5E50A3946 /* Pods-SimpraIOSBootcampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.release.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.release.xcconfig"; sourceTree = "<group>"; };
 		CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpraIOSBootcampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE76E888E2C507B787EB8C9A /* Pods-SimpraIOSBootcampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.debug.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				2EA0FC9429788B45006C1139 /* GameDetailController.swift */,
+				2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */,
+				2EAE54922979454B00FF7AC8 /* PreviewCell.swift */,
 			);
 			path = GameDetail;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 			files = (
 				2E409CE529716CF0005534DF /* UIView+Layout.swift in Sources */,
 				2E409CE72971783B005534DF /* VerticalStackView.swift in Sources */,
+				2EAE5495297947A900FF7AC8 /* PreviewScreenShotsController.swift in Sources */,
 				2E409CE22971622B005534DF /* SearchResultCell.swift in Sources */,
 				2E409CCD29706B23005534DF /* SimpraIOSBootcampProject.xcdatamodeld in Sources */,
 				2E409CDD2971596A005534DF /* GamesSearchController.swift in Sources */,
@@ -404,6 +411,7 @@
 				2E409D2929759244005534DF /* GameRowCell.swift in Sources */,
 				2EA0FC9529788B45006C1139 /* GameDetailController.swift in Sources */,
 				2EA0FC8C29780431006C1139 /* BetterSnapping.swift in Sources */,
+				2EAE54932979454B00FF7AC8 /* PreviewCell.swift in Sources */,
 				2E409D2F2975A834005534DF /* GamesHeaderHorizontalController.swift in Sources */,
 				2E409CC529706B23005534DF /* SceneDelegate.swift in Sources */,
 				2E409D2D2975A693005534DF /* GamesPageHeader.swift in Sources */,

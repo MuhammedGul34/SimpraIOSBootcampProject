@@ -11,6 +11,7 @@ class GameDetailCell: UICollectionViewCell {
     
     var game: GamesDetailsResult! {
         didSet {
+            releasedLabel.text = "Released: \(game?.released ?? "2013-08-13")"
             nameLabel.text = game?.name
             descriptionLabel.text = game?.descriptionRaw
             gameIconImageView.sd_setImage(with: URL(string: game?.backgroundImage ?? ""))
@@ -21,20 +22,17 @@ class GameDetailCell: UICollectionViewCell {
     
     let nameLabel = UILabel(text: "Game Name", font: .boldSystemFont(ofSize: 24), numberOflines: 2 )
     
-    let whatisNewLabel = UILabel(text: "What's New", font: .systemFont(ofSize: 16))
+    let releasedLabel = UILabel(text: "Released", font: .boldSystemFont(ofSize: 16))
     
     let addFavoriteButton = UIButton(title: "Favorite")
     
 //    let descriptionLabel = UILabel(text: "Description", font: .boldSystemFont(ofSize: 20))
     
-    let descriptionLabel = UILabel(text: "Release Notes", font: .systemFont(ofSize: 16), numberOflines: 0)
+    let descriptionLabel = UILabel(text: "Description", font: .systemFont(ofSize: 14), numberOflines: 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .lightGray
-        
-        gameIconImageView.backgroundColor = .red
         gameIconImageView.constrainWidth(constant: 140)
         gameIconImageView.constrainHeight(constant: 140)
         
@@ -55,7 +53,7 @@ class GameDetailCell: UICollectionViewCell {
                     UIView()
                     ], spacing: 12)
                 ], customSpacing: 20),
-            whatisNewLabel,
+            releasedLabel,
             descriptionLabel
             ], spacing: 16)
         addSubview(stackView)
