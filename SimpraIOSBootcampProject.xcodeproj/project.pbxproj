@@ -40,6 +40,7 @@
 		2EAE549129792C9C00FF7AC8 /* GameDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */; };
 		2EAE54932979454B00FF7AC8 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE54922979454B00FF7AC8 /* PreviewCell.swift */; };
 		2EAE5495297947A900FF7AC8 /* PreviewScreenShotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */; };
+		2EAE5497297978CF00FF7AC8 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5496297978CF00FF7AC8 /* CoreData.swift */; };
 		C0A5832F4674CA13F14F15AA /* Pods_SimpraIOSBootcampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCell.swift; sourceTree = "<group>"; };
 		2EAE54922979454B00FF7AC8 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 		2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenShotsController.swift; sourceTree = "<group>"; };
+		2EAE5496297978CF00FF7AC8 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		A8E239A27FA391A5E50A3946 /* Pods-SimpraIOSBootcampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.release.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.release.xcconfig"; sourceTree = "<group>"; };
 		CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpraIOSBootcampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE76E888E2C507B787EB8C9A /* Pods-SimpraIOSBootcampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.debug.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		2E409CC129706B23005534DF /* SimpraIOSBootcampProject */ = {
 			isa = PBXGroup;
 			children = (
+				2EAE5498297978DB00FF7AC8 /* CoreData */,
 				2EA0FC8F2978227D006C1139 /* Model-RAWG */,
 				2E409D1929742E6D005534DF /* Services */,
 				2E409CE329716C5B005534DF /* Helpers */,
@@ -257,6 +260,14 @@
 				2EAE54922979454B00FF7AC8 /* PreviewCell.swift */,
 			);
 			path = GameDetail;
+			sourceTree = "<group>";
+		};
+		2EAE5498297978DB00FF7AC8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE5496297978CF00FF7AC8 /* CoreData.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		2FDDA79496DFA1F2DC5BAAF0 /* Frameworks */ = {
@@ -392,6 +403,7 @@
 				2E409CE72971783B005534DF /* VerticalStackView.swift in Sources */,
 				2EAE5495297947A900FF7AC8 /* PreviewScreenShotsController.swift in Sources */,
 				2E409CE22971622B005534DF /* SearchResultCell.swift in Sources */,
+				2EAE5497297978CF00FF7AC8 /* CoreData.swift in Sources */,
 				2E409CCD29706B23005534DF /* SimpraIOSBootcampProject.xcdatamodeld in Sources */,
 				2E409CDD2971596A005534DF /* GamesSearchController.swift in Sources */,
 				2E409D272975878A005534DF /* GameHorizontalController.swift in Sources */,
