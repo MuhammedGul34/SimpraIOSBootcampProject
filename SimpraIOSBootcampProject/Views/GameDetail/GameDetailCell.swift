@@ -9,6 +9,14 @@ import UIKit
 
 class GameDetailCell: UICollectionViewCell {
     
+    var game: GamesDetailsResult! {
+        didSet {
+            nameLabel.text = game?.name
+            descriptionLabel.text = game?.descriptionRaw
+            gameIconImageView.sd_setImage(with: URL(string: game?.backgroundImage ?? ""))
+        }
+    }
+    
     let gameIconImageView = UIImageView(cornerRadius: 16)
     
     let nameLabel = UILabel(text: "Game Name", font: .boldSystemFont(ofSize: 24), numberOflines: 2 )
@@ -17,12 +25,14 @@ class GameDetailCell: UICollectionViewCell {
     
     let addFavoriteButton = UIButton(title: "Favorite")
     
-    let descriptionLabel = UILabel(text: "Description", font: .boldSystemFont(ofSize: 20))
+//    let descriptionLabel = UILabel(text: "Description", font: .boldSystemFont(ofSize: 20))
     
-    let releaseNoteLabel = UILabel(text: "Release Notes", font: .systemFont(ofSize: 16), numberOflines: 0)
+    let descriptionLabel = UILabel(text: "Release Notes", font: .systemFont(ofSize: 16), numberOflines: 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .lightGray
         
         gameIconImageView.backgroundColor = .red
         gameIconImageView.constrainWidth(constant: 140)
