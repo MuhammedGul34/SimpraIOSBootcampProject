@@ -81,7 +81,9 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         cell.horizontalController.gameGroup = editorsChoiceGames
         cell.horizontalController.collectionView.reloadData()
         cell.horizontalController.didSelectHandler = { [weak self] Result in
+            
             let controller = GameDetailController()
+            controller.gameId = Result.id
             controller.navigationItem.title = Result.name
             self?.navigationController?.pushViewController(controller, animated: true)
             

@@ -35,6 +35,9 @@
 		2EA0FC8C29780431006C1139 /* BetterSnapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC8B29780431006C1139 /* BetterSnapping.swift */; };
 		2EA0FC92297822AB006C1139 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC91297822AB006C1139 /* SocialApp.swift */; };
 		2EA0FC9529788B45006C1139 /* GameDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC9429788B45006C1139 /* GameDetailController.swift */; };
+		2EAE548C2978A4FB00FF7AC8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2EAE548B2978A4FB00FF7AC8 /* Alamofire */; };
+		2EAE548E2978A82C00FF7AC8 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */; };
+		2EAE549129792C9C00FF7AC8 /* GameDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */; };
 		C0A5832F4674CA13F14F15AA /* Pods_SimpraIOSBootcampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +72,8 @@
 		2EA0FC8B29780431006C1139 /* BetterSnapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnapping.swift; sourceTree = "<group>"; };
 		2EA0FC91297822AB006C1139 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		2EA0FC9429788B45006C1139 /* GameDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailController.swift; sourceTree = "<group>"; };
+		2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
+		2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCell.swift; sourceTree = "<group>"; };
 		A8E239A27FA391A5E50A3946 /* Pods-SimpraIOSBootcampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.release.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.release.xcconfig"; sourceTree = "<group>"; };
 		CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpraIOSBootcampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE76E888E2C507B787EB8C9A /* Pods-SimpraIOSBootcampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.debug.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A5832F4674CA13F14F15AA /* Pods_SimpraIOSBootcampProject.framework in Frameworks */,
+				2EAE548C2978A4FB00FF7AC8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +154,7 @@
 		2E409CDE297161DF005534DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2EAE548F29792C8700FF7AC8 /* GameDetail */,
 				2E409D302975AA49005534DF /* Search */,
 				2E409D2329758414005534DF /* Games */,
 			);
@@ -225,6 +232,7 @@
 			children = (
 				2EA0FC91297822AB006C1139 /* SocialApp.swift */,
 				2E409D1729740E0D005534DF /* SearchModel.swift */,
+				2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */,
 			);
 			path = "Model-RAWG";
 			sourceTree = "<group>";
@@ -235,6 +243,14 @@
 				2EA0FC9429788B45006C1139 /* GameDetailController.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		2EAE548F29792C8700FF7AC8 /* GameDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */,
+			);
+			path = GameDetail;
 			sourceTree = "<group>";
 		};
 		2FDDA79496DFA1F2DC5BAAF0 /* Frameworks */ = {
@@ -263,6 +279,9 @@
 			dependencies = (
 			);
 			name = SimpraIOSBootcampProject;
+			packageProductDependencies = (
+				2EAE548B2978A4FB00FF7AC8 /* Alamofire */,
+			);
 			productName = SimpraIOSBootcampProject;
 			productReference = 2E409CBF29706B23005534DF /* SimpraIOSBootcampProject.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +310,9 @@
 				Base,
 			);
 			mainGroup = 2E409CB629706B23005534DF;
+			packageReferences = (
+				2EAE548A2978A4FB00FF7AC8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 2E409CC029706B23005534DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,6 +392,8 @@
 				2E409D1829740E0D005534DF /* SearchModel.swift in Sources */,
 				2E409CC729706B23005534DF /* ViewController.swift in Sources */,
 				2EA0FC8A2977F8DA006C1139 /* HorizontalSnappingController.swift in Sources */,
+				2EAE548E2978A82C00FF7AC8 /* GameDetailModel.swift in Sources */,
+				2EAE549129792C9C00FF7AC8 /* GameDetailCell.swift in Sources */,
 				2E409CDA29713F82005534DF /* BaseTabBarController.swift in Sources */,
 				2E409D322975AA86005534DF /* GameHeaderCell.swift in Sources */,
 				2E409D1B29742E96005534DF /* Service.swift in Sources */,
@@ -604,6 +628,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2EAE548A2978A4FB00FF7AC8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2EAE548B2978A4FB00FF7AC8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EAE548A2978A4FB00FF7AC8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2E409CCB29706B23005534DF /* SimpraIOSBootcampProject.xcdatamodeld */ = {
