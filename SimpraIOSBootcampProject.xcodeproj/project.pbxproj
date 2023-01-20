@@ -174,7 +174,6 @@
 				2E409CE429716CF0005534DF /* UIView+Layout.swift */,
 				2E409CE62971783B005534DF /* VerticalStackView.swift */,
 				2E409D2A29759324005534DF /* Extensions.swift */,
-				2EA0FC87297750A3006C1139 /* Headers.swift */,
 				2EA0FC8B29780431006C1139 /* BetterSnapping.swift */,
 			);
 			path = Helpers;
@@ -240,6 +239,7 @@
 				2EA0FC91297822AB006C1139 /* SocialApp.swift */,
 				2E409D1729740E0D005534DF /* SearchModel.swift */,
 				2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */,
+				2EA0FC87297750A3006C1139 /* Headers.swift */,
 			);
 			path = "Model-RAWG";
 			sourceTree = "<group>";

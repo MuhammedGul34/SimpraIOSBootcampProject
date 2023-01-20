@@ -10,7 +10,7 @@ import UIKit
 class GamesHeaderHorizontalController: HorizontalSnappingController, UICollectionViewDelegateFlowLayout {
     
     let cellId = "cellId"
-    
+    let header = [Header]()
     var socialApps = [SocialApp]()
     
     override func viewDidLoad() {
@@ -33,10 +33,10 @@ class GamesHeaderHorizontalController: HorizontalSnappingController, UICollectio
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GameHeaderCell
         
-        let app = self.socialApps[indexPath.item]
-        cell.companyLabel.text = app.name
-        cell.titleLabel.text = app.tagline
-        cell.imageView.sd_setImage(with: URL(string: app.imageUrl))
+        let header = HeaderDescriptions[indexPath.item]
+                cell.companyLabel.text = header.name
+                cell.titleLabel.text = header.description
+                cell.imageView.image = UIImage(named: header.imageName)
         return cell
     }
 }
