@@ -34,5 +34,4 @@ class BaseTabBarController: UITabBarController {
         
         return navController
     }
-    
 }
