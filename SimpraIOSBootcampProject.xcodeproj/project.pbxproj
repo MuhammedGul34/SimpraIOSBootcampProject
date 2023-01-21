@@ -240,9 +240,9 @@
 			children = (
 				2EA0FC91297822AB006C1139 /* SocialApp.swift */,
 				2E409D1729740E0D005534DF /* SearchModel.swift */,
+				2ED8FBF6297BE45400B7E3AE /* topRated2022GamesModel.swift */,
 				2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */,
 				2EA0FC87297750A3006C1139 /* Headers.swift */,
-				2ED8FBF6297BE45400B7E3AE /* topRated2022GamesModel.swift */,
 			);
 			path = "Model-RAWG";
 			sourceTree = "<group>";

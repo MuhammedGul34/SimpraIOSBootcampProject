@@ -12,7 +12,7 @@ class Service {
     
     func fetchGames(searchTerm: String, completion: @escaping (SearchResults?, Error?) -> ()) {
         let urlString =
-        "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&page=2&search="
+        "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&search=\(searchTerm)&page=1"
         
         fetchGenericJSONData(urlString: urlString, completion: completion)
         // TODO: Search Term adding

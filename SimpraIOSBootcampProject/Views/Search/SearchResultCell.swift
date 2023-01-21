@@ -16,11 +16,14 @@ class SearchResultCell: UICollectionViewCell {
             releaseTimeLabel.text = "Released:\(gameResults.released)"
             ratingLabel.text = "Rating:\(String(gameResults.rating))"
             
-            let url = URL(string: gameResults.backgroundImage)
+            let url = URL(string: gameResults.background_image ?? "")
             gameIconImageView.sd_setImage(with: url)
             
-            screenshot1ImageView.sd_setImage(with: URL(string: gameResults.shortScreenshots[0].image))
-            
+            if gameResults.shortScreenshots.count > 0 {
+                screenshot1ImageView.sd_setImage(with: URL(string: gameResults.shortScreenshots[0].image))
+                
+            }
+           
             if gameResults.shortScreenshots.count > 1{
                 screenshot2ImageView.sd_setImage(with: URL(string: gameResults.shortScreenshots[1].image))
             }
