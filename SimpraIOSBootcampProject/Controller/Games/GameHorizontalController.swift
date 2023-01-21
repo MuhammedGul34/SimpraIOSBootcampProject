@@ -10,14 +10,8 @@ import UIKit
 class GameHorizontalController: HorizontalSnappingController, UICollectionViewDelegateFlowLayout {
     
     let cellId = "cellId"
-    
-    var gameGroup: SearchResults?
-    
-    var socialApps = [SocialApp]()
-    
-    
-
-    var didSelectHandler: ((Result) -> ())?
+    var gameGroup: TopRatedGamesOf2022?
+    var didSelectHandler: ((Game) -> ())?
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let app = gameGroup?.results[indexPath.item] {
@@ -37,9 +31,6 @@ class GameHorizontalController: HorizontalSnappingController, UICollectionViewDe
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return gameGroup?.results.count ?? 0
     }
-    
-    
-
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GameRowCell

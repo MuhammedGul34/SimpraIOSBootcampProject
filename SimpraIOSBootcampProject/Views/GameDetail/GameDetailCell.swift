@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class GameDetailCell: UICollectionViewCell {
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var game: GamesDetailsResult! {
         didSet {
@@ -24,9 +27,7 @@ class GameDetailCell: UICollectionViewCell {
     
     let releasedLabel = UILabel(text: "Released", font: .boldSystemFont(ofSize: 16))
     
-    let addFavoriteButton = UIButton(title: "Favorite")
-    
-//    let descriptionLabel = UILabel(text: "Description", font: .boldSystemFont(ofSize: 20))
+    let addFavoriteButton = UIButton(type: .custom)
     
     let descriptionLabel = UILabel(text: "Description", font: .systemFont(ofSize: 14), numberOflines: 0)
     
@@ -36,12 +37,15 @@ class GameDetailCell: UICollectionViewCell {
         gameIconImageView.constrainWidth(constant: 140)
         gameIconImageView.constrainHeight(constant: 140)
         
-        addFavoriteButton.backgroundColor = .systemBlue
+        addFavoriteButton.backgroundColor = .white
         addFavoriteButton.constrainHeight(constant: 32)
         addFavoriteButton.layer.cornerRadius = 32 / 2
         addFavoriteButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         addFavoriteButton.setTitleColor(.white, for: .normal)
         addFavoriteButton.constrainWidth(constant: 80)
+        addFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        addFavoriteButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
+        
         
         
         let stackView = VerticalStackView(arrangedSubviews: [
@@ -65,6 +69,26 @@ class GameDetailCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func handleButton(){
+        let context = appDelegate.persistentContainer.viewContext
+        if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
+            let object = NSManagedObject(entity: entity, insertInto: context)
+            object.setValue(game.released, forKey: "released")
+            object.setValue(game.name, forKey: "name")
+            object.setValue(game.descriptionRaw, forKey: "desc")
+            object.setValue(game.backgroundImage, forKey: "image")
+            object.setValue(game.backgroundImageAdditional, forKey: "imageAdditonal")
+            object.setValue(game.id, forKey: "id")
+            
+            do {
+                try context.save()
+                print("success to save data to coredata")
+            } catch {
+                print("Error to save coredata")
+            }
+            
+        }
+    }
 }
 
 

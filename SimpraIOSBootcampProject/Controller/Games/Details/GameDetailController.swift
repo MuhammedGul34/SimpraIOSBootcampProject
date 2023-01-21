@@ -11,21 +11,8 @@ import SDWebImage
 
 class GameDetailController: BaseListController, UICollectionViewDelegateFlowLayout {
     
-    var gameId: Int! {
-        didSet {
-            let request = AF.request("https://api.rawg.io/api/games/\(gameId ?? 3939)?key=e88f2727475f49fb903d6aaf20975174")
-            request.responseDecodable(of: GamesDetailsResult.self) { (response) in
-                guard let game = response.value else { return }
-                print(game.released)
-                self.game = game
-                DispatchQueue.main.async{
-                    self.collectionView.reloadData()
-                            }
-                        }
-                    }
-                }
-            
-    
+    var gameId: Int?
+        
     var game: GamesDetailsResult?
         
     let detailCellId = "detailCellId"
@@ -33,6 +20,8 @@ class GameDetailController: BaseListController, UICollectionViewDelegateFlowLayo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchDetail()
         
         collectionView.register(GameDetailCell.self, forCellWithReuseIdentifier: detailCellId)
         navigationItem.largeTitleDisplayMode = .never
@@ -73,5 +62,17 @@ class GameDetailController: BaseListController, UICollectionViewDelegateFlowLayo
         } else {
             return .init(width: view.frame.width, height: 500)
         }
+    }
+    
+    func fetchDetail(){
+        let request = AF.request("https://api.rawg.io/api/games/\(gameId ?? 3939)?key=e88f2727475f49fb903d6aaf20975174")
+        request.responseDecodable(of: GamesDetailsResult.self) { (response) in
+            guard let game = response.value else { return }
+            print(game.id)
+            self.game = game
+            DispatchQueue.main.async{
+                self.collectionView.reloadData()
+                        }
+                    }
     }
 }

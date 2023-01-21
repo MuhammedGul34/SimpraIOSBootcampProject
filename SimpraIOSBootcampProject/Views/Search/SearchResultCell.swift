@@ -13,14 +13,18 @@ class SearchResultCell: UICollectionViewCell {
     var gameResults: Result! {
         didSet {
             nameLabel.text = gameResults.name
-            releaseTimeLabel.text = "Released:\(gameResults.released)"
+            if let release = gameResults.released {
+                releaseTimeLabel.text = "Released:\(release)"
+            }
             ratingLabel.text = "Rating:\(String(gameResults.rating))"
             
-            let url = URL(string: gameResults.backgroundImage)
+            let url = URL(string: gameResults.background_image ?? "")
             gameIconImageView.sd_setImage(with: url)
             
-            screenshot1ImageView.sd_setImage(with: URL(string: gameResults.shortScreenshots[0].image))
-            
+            if gameResults.shortScreenshots.count > 0 {
+                screenshot1ImageView.sd_setImage(with: URL(string: gameResults.shortScreenshots[0].image))
+            }
+           
             if gameResults.shortScreenshots.count > 1{
                 screenshot2ImageView.sd_setImage(with: URL(string: gameResults.shortScreenshots[1].image))
             }

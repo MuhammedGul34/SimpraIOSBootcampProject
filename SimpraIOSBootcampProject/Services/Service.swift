@@ -12,24 +12,33 @@ class Service {
     
     func fetchGames(searchTerm: String, completion: @escaping (SearchResults?, Error?) -> ()) {
         let urlString =
-        "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&page=2&search="
+        "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&search=\(searchTerm)&page=1"
         
         fetchGenericJSONData(urlString: urlString, completion: completion)
         // TODO: Search Term adding
 
     }
+   
     
-    func fetchGames(completion: @escaping (SearchResults?, Error?) -> ()){
+    func fetchTopRatedGames(completion: @escaping (TopRatedGamesOf2022?, Error?) -> ()){
         let urlString =
-        "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&page=2&search="
-        // TODO: Change the api
+        "https://api.rawg.io/api/games?dates=2022-01-01,2022-12-31&ordering=-rating&key=e88f2727475f49fb903d6aaf20975174"
+       
        fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
-    func fetchSocialApps(completion: @escaping ([SocialApp]?, Error?) -> Void){
-        let urlString = "https://api.letsbuildthatapp.com/appstore/social"
+    func GamesBest(completion: @escaping (TopRatedGamesOf2022?, Error?) -> Void){
+        let urlString = "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&dates=2019-09-01,2019-09-30&platforms=18,1,7"
        fetchGenericJSONData(urlString: urlString, completion: completion)
     }
+    
+    func Games2001(completion: @escaping (TopRatedGamesOf2022?, Error?) -> Void){
+        let urlString = "https://api.rawg.io/api/games?dates=2001-01-01,2001-12-31&ordering=-rating&key=e88f2727475f49fb903d6aaf20975174"
+       fetchGenericJSONData(urlString: urlString, completion: completion)
+    }
+    
+    
+    
     
     func fetchGenericJSONData<T: Decodable>(urlString: String, completion: @escaping (T?, Error?) -> ()){
         guard let url = URL(string: urlString) else { return }
