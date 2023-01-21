@@ -11,13 +11,13 @@ class GameHorizontalController: HorizontalSnappingController, UICollectionViewDe
     
     let cellId = "cellId"
     
-    var gameGroup: SearchResults?
+    var gameGroup: TopRatedGamesOf2022?
     
     var socialApps = [SocialApp]()
     
     
 
-    var didSelectHandler: ((Result) -> ())?
+    var didSelectHandler: ((Game) -> ())?
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let app = gameGroup?.results[indexPath.item] {
