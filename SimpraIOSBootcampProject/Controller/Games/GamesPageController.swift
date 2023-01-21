@@ -34,11 +34,9 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         activityIndicatorView.fillSuperview()
     
     }
-    
     // TODO: Editors Choice Assigment
-//    var editorsChoiceGames: SearchResults?
-    var groups = [TopRatedGamesOf2022]()
 
+    var groups = [TopRatedGamesOf2022]()
     
     fileprivate func fetchData() {
         

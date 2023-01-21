@@ -16,7 +16,7 @@ class GameDetailController: BaseListController, UICollectionViewDelegateFlowLayo
             let request = AF.request("https://api.rawg.io/api/games/\(gameId ?? 3939)?key=e88f2727475f49fb903d6aaf20975174")
             request.responseDecodable(of: GamesDetailsResult.self) { (response) in
                 guard let game = response.value else { return }
-                print(game.released)
+                print(game.id )
                 self.game = game
                 DispatchQueue.main.async{
                     self.collectionView.reloadData()
