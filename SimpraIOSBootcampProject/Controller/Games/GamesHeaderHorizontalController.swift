@@ -26,7 +26,7 @@ class GamesHeaderHorizontalController: HorizontalSnappingController, UICollectio
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return socialApps.count
+        return 3
         // TODO: fetch special part and display them 
     }
     
