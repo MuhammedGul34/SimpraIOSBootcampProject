@@ -86,9 +86,7 @@ class GamesSearchController: BaseListController, UICollectionViewDelegateFlowLay
                 self.collectionView.reloadData()
             }
         }
-        
-//        we need to get back our search results
-//        use a complation block 
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
