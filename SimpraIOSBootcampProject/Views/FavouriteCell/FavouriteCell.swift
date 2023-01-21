@@ -66,6 +66,8 @@ class FavouriteCell: UICollectionViewCell {
         addSubview(infoTopstackView)
         infoTopstackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
         
+        gameIconImageView.backgroundColor = .red
+        
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

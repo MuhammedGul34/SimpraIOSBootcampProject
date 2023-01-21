@@ -10,6 +10,8 @@ import CoreData
 
 class GameDetailCell: UICollectionViewCell {
     
+    var flag : Bool = true
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var game: GamesDetailsResult! {
@@ -38,8 +40,8 @@ class GameDetailCell: UICollectionViewCell {
         gameIconImageView.constrainHeight(constant: 140)
         
         addFavoriteButton.backgroundColor = .white
-        addFavoriteButton.constrainHeight(constant: 32)
-        addFavoriteButton.layer.cornerRadius = 32 / 2
+        addFavoriteButton.constrainHeight(constant: 80)
+        addFavoriteButton.layer.cornerRadius = 80 / 2
         addFavoriteButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         addFavoriteButton.setTitleColor(.white, for: .normal)
         addFavoriteButton.constrainWidth(constant: 80)
@@ -69,25 +71,36 @@ class GameDetailCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
     @objc func handleButton(){
-        let context = appDelegate.persistentContainer.viewContext
-        if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
-            let object = NSManagedObject(entity: entity, insertInto: context)
-            object.setValue(game.released, forKey: "released")
-            object.setValue(game.name, forKey: "name")
-            object.setValue(game.descriptionRaw, forKey: "desc")
-            object.setValue(game.backgroundImage, forKey: "image")
-            object.setValue(game.backgroundImageAdditional, forKey: "imageAdditonal")
-            object.setValue(game.id, forKey: "id")
-            
-            do {
-                try context.save()
-                print("success to save data to coredata")
-            } catch {
-                print("Error to save coredata")
+        
+        if flag {
+            flag = false
+            addFavoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            let context = appDelegate.persistentContainer.viewContext
+            if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
+                let object = NSManagedObject(entity: entity, insertInto: context)
+                object.setValue(game.released, forKey: "released")
+                object.setValue(game.name, forKey: "name")
+                object.setValue(game.descriptionRaw, forKey: "desc")
+                object.setValue(game.backgroundImage, forKey: "image")
+                object.setValue(game.backgroundImageAdditional, forKey: "imageAdditonal")
+                object.setValue(game.id, forKey: "id")
+                
+                do {
+                    try context.save()
+                    print("success to save data to coredata")
+                } catch {
+                    print("Error to save coredata")
+                }
+                
             }
-            
+        } else {
+            flag = true
+            addFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
+       
     }
 }
 
