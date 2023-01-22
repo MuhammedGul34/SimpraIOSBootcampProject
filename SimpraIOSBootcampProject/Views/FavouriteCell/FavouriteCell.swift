@@ -9,15 +9,14 @@ import UIKit
 
 class FavouriteCell: UICollectionViewCell {
     
-    var gameResults: Result! {
+    var GameCoreArray : [SearchEntity] = []
+    
+    var gameCore: [SearchEntity]! {
         didSet {
-            nameLabel.text = gameResults.name
-            if let release = gameResults.released {
-                releaseTimeLabel.text = "Released:\(release)"
-            }
-            ratingLabel.text = "Rating:\(String(gameResults.rating))"
-            
-            let url = URL(string: gameResults.background_image ?? "")
+            nameLabel.text = GameCoreArray[0].name
+            releaseTimeLabel.text = GameCoreArray[0].released
+            ratingLabel.text = "3.4"
+            let url = URL(string: GameCoreArray[0].image ?? "")
             gameIconImageView.sd_setImage(with: url)
             
         }
@@ -48,6 +47,14 @@ class FavouriteCell: UICollectionViewCell {
         label.text = "1.25M"
         return label
     }()
+    let TextView: UITextView = {
+        let textView = UITextView()
+        textView.backgroundColor = .red
+        textView.constrainWidth(constant: 160)
+        textView.constrainHeight(constant: 200)
+        textView.layer.cornerRadius = 16
+        return textView
+    }()
     
     
     override init(frame: CGRect) {
@@ -63,8 +70,10 @@ class FavouriteCell: UICollectionViewCell {
         infoTopstackView.spacing = 12
         infoTopstackView.alignment = .center
         
-        addSubview(infoTopstackView)
-        infoTopstackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
+        let overallStackView = VerticalStackView(arrangedSubviews: [infoTopstackView, TextView])
+        
+        addSubview(overallStackView)
+        overallStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
         
         gameIconImageView.backgroundColor = .red
         
