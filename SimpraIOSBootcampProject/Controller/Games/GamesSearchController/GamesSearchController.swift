@@ -16,7 +16,7 @@ class GamesSearchController: BaseListController, UICollectionViewDelegateFlowLay
     
     fileprivate let enterSearchTermLabel: UILabel = {
         let label = UILabel()
-        label.text = "Please enter search term above..."
+        label.text = "Please enter search term above...".localized()
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
