@@ -280,9 +280,9 @@
 		2ED8FBFC297C546F00B7E3AE /* GamesPageController */ = {
 			isa = PBXGroup;
 			children = (
+				2E409D1F29757FD7005534DF /* GamesPageController.swift */,
 				2E409D2E2975A834005534DF /* GamesHeaderHorizontalController.swift */,
 				2E409D262975878A005534DF /* GameHorizontalController.swift */,
-				2E409D1F29757FD7005534DF /* GamesPageController.swift */,
 			);
 			path = GamesPageController;
 			sourceTree = "<group>";

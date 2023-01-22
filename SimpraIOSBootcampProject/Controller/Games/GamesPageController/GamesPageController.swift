@@ -34,8 +34,7 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         activityIndicatorView.fillSuperview()
     
     }
-    // TODO: Editors Choice Assigment
-
+    
     var groups = [TopRatedGamesOf2022]()
     
     fileprivate func fetchData() {
@@ -48,25 +47,27 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        Service.shared.Games2001{ (TopRatedGamesOf2022, err) in
+        Service.shared.fetchTopRatedGames { (TopRatedGamesOf2022, err) in
             print("Done with top grossing")
             dispatchGroup.leave()
             group1 = TopRatedGamesOf2022
         }
         
         dispatchGroup.enter()
-        Service.shared.fetchTopRatedGames { (TopRatedGamesOf2022, err) in
+        Service.shared.GamesBest{ (TopRatedGamesOf2022, err) in
             print("Done with top grossing")
             dispatchGroup.leave()
             group2 = TopRatedGamesOf2022
         }
         
         dispatchGroup.enter()
-        Service.shared.GamesBest{ (TopRatedGamesOf2022, err) in
+        Service.shared.Games2001{ (TopRatedGamesOf2022, err) in
             print("Done with top grossing")
             dispatchGroup.leave()
             group3 = TopRatedGamesOf2022
         }
+        
+        
         
         
         // completion
