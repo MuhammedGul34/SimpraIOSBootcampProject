@@ -9,6 +9,8 @@ import UIKit
 
 class FovouriteGamesViewController: BaseListController, UICollectionViewDelegateFlowLayout {
     
+    var gameCore: [SearchEntity]?
+    
     let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -22,6 +24,8 @@ class FovouriteGamesViewController: BaseListController, UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FavouriteCell
+        cell.gameCore = gameCore
+        self.collectionView.reloadData()
         return cell
     }
     
