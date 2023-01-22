@@ -16,7 +16,7 @@ class GameDetailCell: UICollectionViewCell {
     
     var game: GamesDetailsResult! {
         didSet {
-            releasedLabel.text = "Released: \(game?.released ?? "2013-08-13")"
+            releasedLabel.text = "Released: \(game?.released ?? "2013-08-13".localized())"
             nameLabel.text = game?.name
             descriptionLabel.text = game?.descriptionRaw
             gameIconImageView.sd_setImage(with: URL(string: game?.backgroundImage ?? ""))
@@ -46,6 +46,7 @@ class GameDetailCell: UICollectionViewCell {
         addFavoriteButton.setTitleColor(.white, for: .normal)
         addFavoriteButton.constrainWidth(constant: 80)
         addFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        addFavoriteButton.tintColor = .red
         addFavoriteButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
         
         
@@ -98,7 +99,9 @@ class GameDetailCell: UICollectionViewCell {
             }
         } else {
             flag = true
+            
             addFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            
         }
        
     }

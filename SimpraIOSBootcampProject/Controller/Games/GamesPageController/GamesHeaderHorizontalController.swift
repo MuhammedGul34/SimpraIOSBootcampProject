@@ -34,7 +34,7 @@ class GamesHeaderHorizontalController: HorizontalSnappingController, UICollectio
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GameHeaderCell
         
         let header = HeaderDescriptions[indexPath.item]
-                cell.companyLabel.text = header.name
+        cell.companyLabel.text = header.name
                 cell.titleLabel.text = header.description
                 cell.imageView.image = UIImage(named: header.imageName)
         return cell

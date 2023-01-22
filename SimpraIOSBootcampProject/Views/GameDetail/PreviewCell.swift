@@ -9,7 +9,7 @@ import UIKit
 
 class PreviewCell: UICollectionViewCell {
     
-    let previewLabel = UILabel(text: "Preview", font: .boldSystemFont(ofSize: 20))
+    let previewLabel = UILabel(text: "Preview".localized(), font: .boldSystemFont(ofSize: 20))
     let horizontalController = PreviewScreenShotsController()
     
     override init(frame: CGRect) {

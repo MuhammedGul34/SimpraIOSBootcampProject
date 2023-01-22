@@ -12,7 +12,7 @@ class GameHeaderCell: UICollectionViewCell {
     
     let companyLabel = UILabel(text: "Grand Theft Auto IV", font: .boldSystemFont(ofSize: 12))
     
-    let titleLabel = UILabel(text: "What does the American Dream mean today?", font: .systemFont(ofSize: 24))
+    let titleLabel = UILabel(text: "What does the American Dream mean today?", font: .systemFont(ofSize: 16))
     
     let imageView = UIImageView(cornerRadius: 8)
     
