@@ -12,7 +12,7 @@ class FavouriteCell: UICollectionViewCell {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var GameCoreArray : [SearchEntity] = []
+    var GameCoreArray = [SearchEntity]()
     
     var gameCore: [SearchEntity]! {
         didSet {
@@ -21,7 +21,6 @@ class FavouriteCell: UICollectionViewCell {
             ratingLabel.text = "3.4"
             let url = URL(string: GameCoreArray[0].image ?? "")
             gameIconImageView.sd_setImage(with: url)
-            
         }
     }
 
@@ -52,10 +51,11 @@ class FavouriteCell: UICollectionViewCell {
     }()
     let TextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .red
+        textView.backgroundColor = .init(white: 0.98, alpha: 1)
         textView.constrainWidth(constant: 160)
         textView.constrainHeight(constant: 200)
         textView.layer.cornerRadius = 16
+        textView.isScrollEnabled = false
         return textView
     }()
     
@@ -65,7 +65,7 @@ class FavouriteCell: UICollectionViewCell {
         
         layer.cornerRadius = 16
         backgroundColor = .systemGray6
-        
+      
         retrieveFromCoreData()
         
         let infoTopstackView = UIStackView(arrangedSubviews: [
@@ -75,12 +75,12 @@ class FavouriteCell: UICollectionViewCell {
         infoTopstackView.spacing = 12
         infoTopstackView.alignment = .center
         
-        let overallStackView = VerticalStackView(arrangedSubviews: [infoTopstackView, TextView])
+        let overallStackView = VerticalStackView(arrangedSubviews: [infoTopstackView
+//                                                                    , TextView
+                                                                   ])
         
         addSubview(overallStackView)
         overallStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
-        
-        gameIconImageView.backgroundColor = .red
         
     }
     required init?(coder: NSCoder) {
@@ -102,4 +102,9 @@ class FavouriteCell: UICollectionViewCell {
         }
     
 }
-
+//
+//extension FovouriteGamesViewController: UITextViewDelegate{
+//    func textViewDidChange(_ textView: UITextView) {
+//        print(textView.text)
+//    }
+//}
