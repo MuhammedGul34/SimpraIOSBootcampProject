@@ -10,16 +10,13 @@ import CoreData
 
 class FavouriteCell: UICollectionViewCell {
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    var GameCoreArray = [SearchEntity]()
-    
-    var gameCore: [SearchEntity]! {
+    var gameCore: SearchEntity! {
         didSet {
-            nameLabel.text = GameCoreArray[0].name
-            releaseTimeLabel.text = GameCoreArray[0].released
+    
+            nameLabel.text = gameCore.map{$0.name ?? "Game "}
+            releaseTimeLabel.text = gameCore.map{$0.released ?? "Game "}
             ratingLabel.text = "3.4"
-            let url = URL(string: GameCoreArray[0].image ?? "")
+            let url = URL(string: gameCore.map{$0.image ?? "Game"}!)
             gameIconImageView.sd_setImage(with: url)
         }
     }
@@ -66,7 +63,6 @@ class FavouriteCell: UICollectionViewCell {
         layer.cornerRadius = 16
         backgroundColor = .systemGray6
       
-        retrieveFromCoreData()
         
         let infoTopstackView = UIStackView(arrangedSubviews: [
         gameIconImageView,
@@ -87,19 +83,7 @@ class FavouriteCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func retrieveFromCoreData() {
-
-            let context = appDelegate.persistentContainer.viewContext
-            let request = NSFetchRequest<SearchEntity>(entityName: "SearchEntity")
-
-            do {
-                let result = try context.fetch(request)
-                self.GameCoreArray = result
-                print("Data Camed From CoreData\(result)")
-            } catch {
-                print("Error while retrieving data from cache.")
-            }
-        }
+    
     
 }
 //

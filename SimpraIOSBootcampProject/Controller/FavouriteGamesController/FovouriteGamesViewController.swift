@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import CoreData
 
 class FovouriteGamesViewController: BaseListController, UICollectionViewDelegateFlowLayout {
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    var GameCoreArray = [SearchEntity]()
+
     var gameCore: [SearchEntity]?
     
     let cellId = "cellId"
@@ -16,15 +21,17 @@ class FovouriteGamesViewController: BaseListController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        retrieveFromCoreData()
+        
         collectionView.register(FavouriteCell.self, forCellWithReuseIdentifier: cellId)
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return gameCore?.count ?? 0 
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FavouriteCell
-        cell.gameCore = gameCore
+        cell.gameCore = gameCore?[indexPath.row]
         self.collectionView.reloadData()
         return cell
     }
@@ -40,5 +47,19 @@ class FovouriteGamesViewController: BaseListController, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 5, left: 0, bottom: 5, right: 0)
     }
+    
+    func retrieveFromCoreData() {
+
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<SearchEntity>(entityName: "SearchEntity")
+
+            do {
+                let result = try context.fetch(request)
+                self.gameCore = result
+                print("Data Camed From CoreData\(result)")
+            } catch {
+                print("Error while retrieving data from cache.")
+            }
+        }
     
 }
