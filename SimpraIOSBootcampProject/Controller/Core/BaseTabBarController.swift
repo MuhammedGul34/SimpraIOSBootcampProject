@@ -11,8 +11,6 @@ import UIKit
 class BaseTabBarController: UITabBarController {
     
     // We will create another controller
-    // refactor our repeated logic inside of viewdidload
-    // We are going to introduce search controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +18,7 @@ class BaseTabBarController: UITabBarController {
         viewControllers = [
         createNavController(viewController: GamesPageController(), title: "Games", imageName: "apps"),
         createNavController(viewController: GamesSearchController(), title: "Search", imageName: "search"),
-        createNavController(viewController: UIViewController(), title: "Today", imageName: "today_icon"),
+        createNavController(viewController: FovouriteGamesViewController(), title: "Favorite", imageName: "today_icon"),
         ]
     }
     fileprivate func createNavController(viewController: UIViewController, title: String, imageName: String) -> UIViewController {
