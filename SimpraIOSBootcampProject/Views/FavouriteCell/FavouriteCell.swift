@@ -13,9 +13,9 @@ class FavouriteCell: UICollectionViewCell {
     var gameCore: SearchEntity! {
         didSet {
     
-            nameLabel.text = gameCore.map{$0.name ?? "Game "}
-            releaseTimeLabel.text = gameCore.map{$0.released ?? "Game "}
-            ratingLabel.text = "3.4"
+            nameLabel.text = gameCore.map{$0.name ?? "Game"}
+            releaseTimeLabel.text = gameCore.map{$0.released ?? "Game"}
+            ratingLabel.text = gameCore.map{"ID: \($0.id)"}
             let url = URL(string: gameCore.map{$0.image ?? "Game"}!)
             gameIconImageView.sd_setImage(with: url)
         }
