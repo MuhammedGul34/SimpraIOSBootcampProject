@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class FavouriteCell: UICollectionViewCell {
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var GameCoreArray : [SearchEntity] = []
     
@@ -63,6 +66,8 @@ class FavouriteCell: UICollectionViewCell {
         layer.cornerRadius = 16
         backgroundColor = .systemGray6
         
+        retrieveFromCoreData()
+        
         let infoTopstackView = UIStackView(arrangedSubviews: [
         gameIconImageView,
         VerticalStackView(arrangedSubviews: [nameLabel, releaseTimeLabel, ratingLabel])])
@@ -81,6 +86,20 @@ class FavouriteCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func retrieveFromCoreData() {
+
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<SearchEntity>(entityName: "SearchEntity")
+
+            do {
+                let result = try context.fetch(request)
+                self.GameCoreArray = result
+                print("Data Camed From CoreData\(result)")
+            } catch {
+                print("Error while retrieving data from cache.")
+            }
+        }
     
 }
 
