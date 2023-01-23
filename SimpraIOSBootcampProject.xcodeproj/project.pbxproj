@@ -155,7 +155,6 @@
 		2E409CDB2971592C005534DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2ED8FBFD297C549E00B7E3AE /* FavouriteGamesController */,
 				2E409D1C29742EE4005534DF /* Core */,
 				2E409D1E29757FC2005534DF /* Games */,
 			);
@@ -213,6 +212,7 @@
 		2E409D1E29757FC2005534DF /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				2ED8FBFD297C549E00B7E3AE /* FavouriteGamesController */,
 				2E409D1D29742EF5005534DF /* GamesSearchController */,
 				2ED8FBFC297C546F00B7E3AE /* GamesPageController */,
 				2EA0FC9329788B22006C1139 /* Details */,
@@ -292,7 +292,8 @@
 			children = (
 				2ED8FBFE297C54BC00B7E3AE /* FovouriteGamesViewController.swift */,
 			);
-			path = FavouriteGamesController;
+			name = FavouriteGamesController;
+			path = ../Core/FavouriteGamesController;
 			sourceTree = "<group>";
 		};
 		2ED8FC00297C589200B7E3AE /* FavouriteCell */ = {

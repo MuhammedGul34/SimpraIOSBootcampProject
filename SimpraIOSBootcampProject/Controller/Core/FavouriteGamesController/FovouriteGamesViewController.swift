@@ -11,8 +11,6 @@ import CoreData
 class FovouriteGamesViewController: BaseListController, UICollectionViewDelegateFlowLayout {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    var GameCoreArray = [SearchEntity]()
 
     var gameCore: [SearchEntity]?
     
@@ -20,6 +18,8 @@ class FovouriteGamesViewController: BaseListController, UICollectionViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        
+//        deleteAllRecords(entity : "SearchEntity")
         
         retrieveFromCoreData()
         
@@ -61,5 +61,19 @@ class FovouriteGamesViewController: BaseListController, UICollectionViewDelegate
                 print("Error while retrieving data from cache.")
             }
         }
+    
+//    func deleteAllRecords(entity : String) {
+//        let context = appDelegate.persistentContainer.viewContext
+//            let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+//            let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+//
+//            do {
+//                try context.execute(deleteRequest)
+//                try context.save()
+//            } catch {
+//                print ("There was an error")
+//            }
+//        }
+
     
 }
