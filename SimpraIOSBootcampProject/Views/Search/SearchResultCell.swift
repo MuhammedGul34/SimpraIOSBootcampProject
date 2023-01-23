@@ -44,20 +44,17 @@ class SearchResultCell: UICollectionViewCell {
         iv.clipsToBounds = true
         return iv
     }()
-    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Game Name"
         label.font = .systemFont(ofSize: 16, weight: .bold)
         return label
     }()
-//    TODO: Specialize from data to name
     let releaseTimeLabel: UILabel = {
         let label = UILabel()
         label.text = "Kind of Game"
         return label
     }()
-//    TODO: Specialize from data to name
     let ratingLabel: UILabel = {
         let label = UILabel()
         label.text = "1.25M"
@@ -116,9 +113,7 @@ class SearchResultCell: UICollectionViewCell {
        
         addSubview(overallStackView)
         overallStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
-        
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

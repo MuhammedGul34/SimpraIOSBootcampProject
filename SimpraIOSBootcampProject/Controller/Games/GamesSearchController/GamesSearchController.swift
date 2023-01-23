@@ -33,10 +33,6 @@ class GamesSearchController: BaseListController, UICollectionViewDelegateFlowLay
         enterSearchTermLabel.fillSuperview(padding: .init(top: 100, left: 50, bottom: 0, right: 50))
         
         setupSearchBar()
-        
-//        fetchGames()
-        
-
     }
     
     fileprivate func setupSearchBar(){
@@ -67,13 +63,8 @@ class GamesSearchController: BaseListController, UICollectionViewDelegateFlowLay
     }
     
     fileprivate var gameResults = [Result]()
-    
-    // 1- Populate our cells with our games data
-    // 2- Extract this function fetchGames() ouyside of this controller file
-    
     fileprivate func fetchGames(){
-        
-
+    
         Service.shared.fetchGames(searchTerm: "Dota 2") { res, error in
             
             if let error = error {

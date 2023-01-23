@@ -28,7 +28,6 @@ struct GamesDetailsResult: Codable {
     }
 }
 
-
 // MARK: - Developer
 struct Developer: Codable {
     let id: Int?
@@ -36,7 +35,6 @@ struct Developer: Codable {
     let gamesCount: Int?
     let imageBackground: String?
   
-
     enum CodingKeys: String, CodingKey {
         case id, name, slug
         case gamesCount = "games_count"

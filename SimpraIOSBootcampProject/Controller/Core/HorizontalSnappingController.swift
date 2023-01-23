@@ -43,7 +43,6 @@ class SnappingLayout: UICollectionViewFlowLayout {
         } else if vX < 0 {
             pageNumber -= 1
         }
-        
         let nearestPageOffset = pageNumber * itemSpace
         return CGPoint(x: nearestPageOffset,
                        y: parent.y)

@@ -10,7 +10,6 @@ import SDWebImage
 
 class PreviewScreenShotsController: HorizontalSnappingController, UICollectionViewDelegateFlowLayout {
     
-    
     let cellId = "cellId"
     
     var game: GamesDetailsResult? {
@@ -19,9 +18,7 @@ class PreviewScreenShotsController: HorizontalSnappingController, UICollectionVi
         }
     }
     
-    
     class ScreenShotCell: UICollectionViewCell{
-        
         let imageView = UIImageView(cornerRadius: 12)
         
         override init(frame: CGRect){
@@ -50,7 +47,6 @@ class PreviewScreenShotsController: HorizontalSnappingController, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScreenShotCell
         let screenShotUrl = self.game?.backgroundImageAdditional
         cell.imageView.sd_setImage(with: URL(string: screenShotUrl ?? "ad"))
-        
         return cell
     }
     

@@ -27,7 +27,6 @@ class GamesHeaderHorizontalController: HorizontalSnappingController, UICollectio
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
-        // TODO: fetch special part and display them 
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
