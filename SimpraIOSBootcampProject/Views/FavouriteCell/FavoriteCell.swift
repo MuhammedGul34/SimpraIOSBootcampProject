@@ -1,14 +1,15 @@
 //
-//  FavouriteCell.swift
+//  Controller.swift
 //  SimpraIOSBootcampProject
 //
-//  Created by Muhammed Gül on 21.01.2023.
+//  Created by Muhammed Gül on 24.01.2023.
 //
+
 
 import UIKit
 import CoreData
 
-class FavouriteCell: UICollectionViewCell {
+class FavouriteTableViewCell: UITableViewCell {
     
     var gameCore: SearchEntity! {
         didSet {
@@ -46,38 +47,52 @@ class FavouriteCell: UICollectionViewCell {
         label.text = "1.25M"
         return label
     }()
-    let TextView: UITextView = {
-        let textView = UITextView()
-        textView.backgroundColor = .init(white: 0.98, alpha: 1)
-        textView.constrainWidth(constant: 160)
-        textView.constrainHeight(constant: 200)
-        textView.layer.cornerRadius = 16
-        textView.isScrollEnabled = false
-        return textView
-    }()
+    var UnaddFavoriteButton = UIButton()
+
+//    {
+//        didSet
+//        {
+//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(subscribe))
+//            UnaddFavoriteButton.addGestureRecognizer(tapGestureRecognizer)
+//        }
+//    }
     
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         layer.cornerRadius = 16
         backgroundColor = .systemGray6
-      
+    
+ 
+        UnaddFavoriteButton.backgroundColor = .white
+        UnaddFavoriteButton.constrainHeight(constant: 80)
+        UnaddFavoriteButton.layer.cornerRadius = 80 / 2
+        UnaddFavoriteButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        UnaddFavoriteButton.setTitleColor(.white, for: .normal)
+        UnaddFavoriteButton.constrainWidth(constant: 150)
+        UnaddFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        UnaddFavoriteButton.addTarget(self, action: #selector(subscribe), for: .touchUpInside)
+
+        
         let infoTopstackView = UIStackView(arrangedSubviews: [
         gameIconImageView,
         VerticalStackView(arrangedSubviews: [nameLabel, releaseTimeLabel, ratingLabel])])
-        
+
         infoTopstackView.spacing = 12
         infoTopstackView.alignment = .center
-        
-        let overallStackView = VerticalStackView(arrangedSubviews: [infoTopstackView])
-        
-        addSubview(overallStackView)
-        overallStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
-        
+
+        addSubview(infoTopstackView)
+        infoTopstackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
+
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    @objc func subscribe() {
+        print("Deleting row")
+    }
+
+    
 }
 

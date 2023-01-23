@@ -15,7 +15,7 @@ class BaseTabBarController: UITabBarController {
         viewControllers = [
             createNavController(viewController: GamesPageController(), title: "Games".localized(), imageName: "apps"),
             createNavController(viewController: GamesSearchController(), title: "Search".localized(), imageName: "search"),
-            createNavController(viewController: FovouriteGamesViewController(), title: "Favorite".localized(), imageName: "today_icon"),
+            createNavController(viewController: FavouriteViewController(), title: "Favorite".localized(), imageName: "today_icon"),
         ]
     }
     fileprivate func createNavController(viewController: UIViewController, title: String, imageName: String) -> UIViewController {
