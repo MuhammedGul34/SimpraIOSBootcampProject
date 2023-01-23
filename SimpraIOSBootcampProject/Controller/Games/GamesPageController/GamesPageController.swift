@@ -111,11 +111,11 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         let appGroup = groups[indexPath.item]
         
         if indexPath.item == 0 {
-            cell.titleLabel.text = "Most Choosen Games from 2001"
+            cell.titleLabel.text = "Most Choosen Games from 2001".localized()
         } else if indexPath.item == 1 {
-            cell.titleLabel.text = "Top Rated games"
+            cell.titleLabel.text = "Top Rated games".localized()
         } else {
-            cell.titleLabel.text = "Best Games"
+            cell.titleLabel.text = "Best Games".localized()
         }
          
         cell.horizontalController.gameGroup = appGroup
