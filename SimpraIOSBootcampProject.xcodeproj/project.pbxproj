@@ -45,6 +45,7 @@
 		2ED8FC02297C58A500B7E3AE /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC01297C58A500B7E3AE /* FavouriteCell.swift */; };
 		2ED8FC16297EBA8C00B7E3AE /* LocalizableExtensiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC15297EBA8C00B7E3AE /* LocalizableExtensiton.swift */; };
 		2ED8FC1A297EBEE400B7E3AE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2ED8FC1C297EBEE400B7E3AE /* Localizable.strings */; };
+		2ED8FC24297EE37E00B7E3AE /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC23297EE37E00B7E3AE /* LocalNotificationManager.swift */; };
 		C0A5832F4674CA13F14F15AA /* Pods_SimpraIOSBootcampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		2ED8FC17297EBE9100B7E3AE /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		2ED8FC1B297EBEE400B7E3AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2ED8FC1D297EBEF500B7E3AE /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2ED8FC23297EE37E00B7E3AE /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		A8E239A27FA391A5E50A3946 /* Pods-SimpraIOSBootcampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.release.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.release.xcconfig"; sourceTree = "<group>"; };
 		CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpraIOSBootcampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE76E888E2C507B787EB8C9A /* Pods-SimpraIOSBootcampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.debug.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		2E409CC129706B23005534DF /* SimpraIOSBootcampProject */ = {
 			isa = PBXGroup;
 			children = (
+				2ED8FC22297EE36400B7E3AE /* LocalNotificationManager */,
 				2ED8FC14297EBA7A00B7E3AE /* Localizable */,
 				2EA0FC8F2978227D006C1139 /* Model-RAWG */,
 				2E409D1929742E6D005534DF /* Services */,
@@ -317,6 +320,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		2ED8FC22297EE36400B7E3AE /* LocalNotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				2ED8FC23297EE37E00B7E3AE /* LocalNotificationManager.swift */,
+			);
+			path = LocalNotificationManager;
+			sourceTree = "<group>";
+		};
 		2FDDA79496DFA1F2DC5BAAF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +461,7 @@
 			files = (
 				2E409CE529716CF0005534DF /* UIView+Layout.swift in Sources */,
 				2E409CE72971783B005534DF /* VerticalStackView.swift in Sources */,
+				2ED8FC24297EE37E00B7E3AE /* LocalNotificationManager.swift in Sources */,
 				2EAE5495297947A900FF7AC8 /* PreviewScreenShotsController.swift in Sources */,
 				2E409CE22971622B005534DF /* SearchResultCell.swift in Sources */,
 				2E409CCD29706B23005534DF /* SimpraIOSBootcampProject.xcdatamodeld in Sources */,
