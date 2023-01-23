@@ -10,11 +10,14 @@ import UIKit
 class GameHorizontalController: HorizontalSnappingController, UICollectionViewDelegateFlowLayout {
     
     let cellId = "cellId"
+    var gameGroup: TopRatedGamesOf2022?
+    var didSelectHandler: ((Game) -> ())?
     
-    var gameGroup: SearchResults?
-    
-    var socialApps = [SocialApp]()
-
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let app = gameGroup?.results[indexPath.item] {
+            didSelectHandler?(app)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -34,6 +34,16 @@
 		2EA0FC8A2977F8DA006C1139 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC892977F8DA006C1139 /* HorizontalSnappingController.swift */; };
 		2EA0FC8C29780431006C1139 /* BetterSnapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC8B29780431006C1139 /* BetterSnapping.swift */; };
 		2EA0FC92297822AB006C1139 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC91297822AB006C1139 /* SocialApp.swift */; };
+		2EA0FC9529788B45006C1139 /* GameDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC9429788B45006C1139 /* GameDetailController.swift */; };
+		2EAE548C2978A4FB00FF7AC8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2EAE548B2978A4FB00FF7AC8 /* Alamofire */; };
+		2EAE548E2978A82C00FF7AC8 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */; };
+		2EAE549129792C9C00FF7AC8 /* GameDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */; };
+		2EAE54932979454B00FF7AC8 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE54922979454B00FF7AC8 /* PreviewCell.swift */; };
+		2EAE5495297947A900FF7AC8 /* PreviewScreenShotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */; };
+		2EAE5497297978CF00FF7AC8 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5496297978CF00FF7AC8 /* CoreData.swift */; };
+		2ED8FBF7297BE45400B7E3AE /* topRated2022GamesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FBF6297BE45400B7E3AE /* topRated2022GamesModel.swift */; };
+		2ED8FBFF297C54BC00B7E3AE /* FovouriteGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FBFE297C54BC00B7E3AE /* FovouriteGamesViewController.swift */; };
+		2ED8FC02297C58A500B7E3AE /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC01297C58A500B7E3AE /* FavouriteCell.swift */; };
 		C0A5832F4674CA13F14F15AA /* Pods_SimpraIOSBootcampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +77,15 @@
 		2EA0FC892977F8DA006C1139 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		2EA0FC8B29780431006C1139 /* BetterSnapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnapping.swift; sourceTree = "<group>"; };
 		2EA0FC91297822AB006C1139 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
+		2EA0FC9429788B45006C1139 /* GameDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailController.swift; sourceTree = "<group>"; };
+		2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
+		2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCell.swift; sourceTree = "<group>"; };
+		2EAE54922979454B00FF7AC8 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenShotsController.swift; sourceTree = "<group>"; };
+		2EAE5496297978CF00FF7AC8 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		2ED8FBF6297BE45400B7E3AE /* topRated2022GamesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topRated2022GamesModel.swift; sourceTree = "<group>"; };
+		2ED8FBFE297C54BC00B7E3AE /* FovouriteGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FovouriteGamesViewController.swift; sourceTree = "<group>"; };
+		2ED8FC01297C58A500B7E3AE /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
 		A8E239A27FA391A5E50A3946 /* Pods-SimpraIOSBootcampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.release.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.release.xcconfig"; sourceTree = "<group>"; };
 		CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpraIOSBootcampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE76E888E2C507B787EB8C9A /* Pods-SimpraIOSBootcampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.debug.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A5832F4674CA13F14F15AA /* Pods_SimpraIOSBootcampProject.framework in Frameworks */,
+				2EAE548C2978A4FB00FF7AC8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +134,7 @@
 		2E409CC129706B23005534DF /* SimpraIOSBootcampProject */ = {
 			isa = PBXGroup;
 			children = (
+				2EAE5498297978DB00FF7AC8 /* CoreData */,
 				2EA0FC8F2978227D006C1139 /* Model-RAWG */,
 				2E409D1929742E6D005534DF /* Services */,
 				2E409CE329716C5B005534DF /* Helpers */,
@@ -134,11 +155,8 @@
 		2E409CDB2971592C005534DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2E409D212975808E005534DF /* BaseListController.swift */,
-				2EA0FC892977F8DA006C1139 /* HorizontalSnappingController.swift */,
-				2E409D1E29757FC2005534DF /* Games */,
-				2E409D1D29742EF5005534DF /* GamesSearchController */,
 				2E409D1C29742EE4005534DF /* Core */,
+				2E409D1E29757FC2005534DF /* Games */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,6 +164,8 @@
 		2E409CDE297161DF005534DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2ED8FC00297C589200B7E3AE /* FavouriteCell */,
+				2EAE548F29792C8700FF7AC8 /* GameDetail */,
 				2E409D302975AA49005534DF /* Search */,
 				2E409D2329758414005534DF /* Games */,
 			);
@@ -158,7 +178,6 @@
 				2E409CE429716CF0005534DF /* UIView+Layout.swift */,
 				2E409CE62971783B005534DF /* VerticalStackView.swift */,
 				2E409D2A29759324005534DF /* Extensions.swift */,
-				2EA0FC87297750A3006C1139 /* Headers.swift */,
 				2EA0FC8B29780431006C1139 /* BetterSnapping.swift */,
 			);
 			path = Helpers;
@@ -176,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				2E409CD929713F82005534DF /* BaseTabBarController.swift */,
+				2E409D212975808E005534DF /* BaseListController.swift */,
+				2EA0FC892977F8DA006C1139 /* HorizontalSnappingController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -191,9 +212,10 @@
 		2E409D1E29757FC2005534DF /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				2E409D1F29757FD7005534DF /* GamesPageController.swift */,
-				2E409D262975878A005534DF /* GameHorizontalController.swift */,
-				2E409D2E2975A834005534DF /* GamesHeaderHorizontalController.swift */,
+				2ED8FBFD297C549E00B7E3AE /* FavouriteGamesController */,
+				2E409D1D29742EF5005534DF /* GamesSearchController */,
+				2ED8FBFC297C546F00B7E3AE /* GamesPageController */,
+				2EA0FC9329788B22006C1139 /* Details */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -222,8 +244,64 @@
 			children = (
 				2EA0FC91297822AB006C1139 /* SocialApp.swift */,
 				2E409D1729740E0D005534DF /* SearchModel.swift */,
+				2ED8FBF6297BE45400B7E3AE /* topRated2022GamesModel.swift */,
+				2EAE548D2978A82C00FF7AC8 /* GameDetailModel.swift */,
+				2EA0FC87297750A3006C1139 /* Headers.swift */,
 			);
 			path = "Model-RAWG";
+			sourceTree = "<group>";
+		};
+		2EA0FC9329788B22006C1139 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				2EA0FC9429788B45006C1139 /* GameDetailController.swift */,
+				2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		2EAE548F29792C8700FF7AC8 /* GameDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE549029792C9C00FF7AC8 /* GameDetailCell.swift */,
+				2EAE54922979454B00FF7AC8 /* PreviewCell.swift */,
+			);
+			path = GameDetail;
+			sourceTree = "<group>";
+		};
+		2EAE5498297978DB00FF7AC8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE5496297978CF00FF7AC8 /* CoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2ED8FBFC297C546F00B7E3AE /* GamesPageController */ = {
+			isa = PBXGroup;
+			children = (
+				2E409D1F29757FD7005534DF /* GamesPageController.swift */,
+				2E409D2E2975A834005534DF /* GamesHeaderHorizontalController.swift */,
+				2E409D262975878A005534DF /* GameHorizontalController.swift */,
+			);
+			path = GamesPageController;
+			sourceTree = "<group>";
+		};
+		2ED8FBFD297C549E00B7E3AE /* FavouriteGamesController */ = {
+			isa = PBXGroup;
+			children = (
+				2ED8FBFE297C54BC00B7E3AE /* FovouriteGamesViewController.swift */,
+			);
+			name = FavouriteGamesController;
+			path = ../Core/FavouriteGamesController;
+			sourceTree = "<group>";
+		};
+		2ED8FC00297C589200B7E3AE /* FavouriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				2ED8FC01297C58A500B7E3AE /* FavouriteCell.swift */,
+			);
+			path = FavouriteCell;
 			sourceTree = "<group>";
 		};
 		2FDDA79496DFA1F2DC5BAAF0 /* Frameworks */ = {
@@ -252,6 +330,9 @@
 			dependencies = (
 			);
 			name = SimpraIOSBootcampProject;
+			packageProductDependencies = (
+				2EAE548B2978A4FB00FF7AC8 /* Alamofire */,
+			);
 			productName = SimpraIOSBootcampProject;
 			productReference = 2E409CBF29706B23005534DF /* SimpraIOSBootcampProject.app */;
 			productType = "com.apple.product-type.application";
@@ -280,6 +361,9 @@
 				Base,
 			);
 			mainGroup = 2E409CB629706B23005534DF;
+			packageReferences = (
+				2EAE548A2978A4FB00FF7AC8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 2E409CC029706B23005534DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -351,7 +435,9 @@
 			files = (
 				2E409CE529716CF0005534DF /* UIView+Layout.swift in Sources */,
 				2E409CE72971783B005534DF /* VerticalStackView.swift in Sources */,
+				2EAE5495297947A900FF7AC8 /* PreviewScreenShotsController.swift in Sources */,
 				2E409CE22971622B005534DF /* SearchResultCell.swift in Sources */,
+				2EAE5497297978CF00FF7AC8 /* CoreData.swift in Sources */,
 				2E409CCD29706B23005534DF /* SimpraIOSBootcampProject.xcdatamodeld in Sources */,
 				2E409CDD2971596A005534DF /* GamesSearchController.swift in Sources */,
 				2E409D272975878A005534DF /* GameHorizontalController.swift in Sources */,
@@ -359,17 +445,24 @@
 				2E409D1829740E0D005534DF /* SearchModel.swift in Sources */,
 				2E409CC729706B23005534DF /* ViewController.swift in Sources */,
 				2EA0FC8A2977F8DA006C1139 /* HorizontalSnappingController.swift in Sources */,
+				2EAE548E2978A82C00FF7AC8 /* GameDetailModel.swift in Sources */,
+				2EAE549129792C9C00FF7AC8 /* GameDetailCell.swift in Sources */,
 				2E409CDA29713F82005534DF /* BaseTabBarController.swift in Sources */,
 				2E409D322975AA86005534DF /* GameHeaderCell.swift in Sources */,
 				2E409D1B29742E96005534DF /* Service.swift in Sources */,
 				2E409D2029757FD7005534DF /* GamesPageController.swift in Sources */,
 				2E409D2529758446005534DF /* GamesGroupCell.swift in Sources */,
+				2ED8FBF7297BE45400B7E3AE /* topRated2022GamesModel.swift in Sources */,
 				2E409CC329706B23005534DF /* AppDelegate.swift in Sources */,
 				2E409D2B29759324005534DF /* Extensions.swift in Sources */,
 				2E409D2929759244005534DF /* GameRowCell.swift in Sources */,
+				2EA0FC9529788B45006C1139 /* GameDetailController.swift in Sources */,
 				2EA0FC8C29780431006C1139 /* BetterSnapping.swift in Sources */,
+				2EAE54932979454B00FF7AC8 /* PreviewCell.swift in Sources */,
 				2E409D2F2975A834005534DF /* GamesHeaderHorizontalController.swift in Sources */,
 				2E409CC529706B23005534DF /* SceneDelegate.swift in Sources */,
+				2ED8FC02297C58A500B7E3AE /* FavouriteCell.swift in Sources */,
+				2ED8FBFF297C54BC00B7E3AE /* FovouriteGamesViewController.swift in Sources */,
 				2E409D2D2975A693005534DF /* GamesPageHeader.swift in Sources */,
 				2EA0FC92297822AB006C1139 /* SocialApp.swift in Sources */,
 				2EA0FC88297750A3006C1139 /* Headers.swift in Sources */,
@@ -592,6 +685,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2EAE548A2978A4FB00FF7AC8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2EAE548B2978A4FB00FF7AC8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EAE548A2978A4FB00FF7AC8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2E409CCB29706B23005534DF /* SimpraIOSBootcampProject.xcdatamodeld */ = {
