@@ -41,8 +41,6 @@
 		2EAE54932979454B00FF7AC8 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE54922979454B00FF7AC8 /* PreviewCell.swift */; };
 		2EAE5495297947A900FF7AC8 /* PreviewScreenShotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */; };
 		2ED8FBF7297BE45400B7E3AE /* topRated2022GamesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FBF6297BE45400B7E3AE /* topRated2022GamesModel.swift */; };
-		2ED8FBFF297C54BC00B7E3AE /* FovouriteGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FBFE297C54BC00B7E3AE /* FovouriteGamesViewController.swift */; };
-		2ED8FC02297C58A500B7E3AE /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC01297C58A500B7E3AE /* FavouriteCell.swift */; };
 		2ED8FC16297EBA8C00B7E3AE /* LocalizableExtensiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC15297EBA8C00B7E3AE /* LocalizableExtensiton.swift */; };
 		2ED8FC1A297EBEE400B7E3AE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2ED8FC1C297EBEE400B7E3AE /* Localizable.strings */; };
 		2ED8FC24297EE37E00B7E3AE /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC23297EE37E00B7E3AE /* LocalNotificationManager.swift */; };
@@ -87,8 +85,6 @@
 		2EAE54922979454B00FF7AC8 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 		2EAE5494297947A900FF7AC8 /* PreviewScreenShotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenShotsController.swift; sourceTree = "<group>"; };
 		2ED8FBF6297BE45400B7E3AE /* topRated2022GamesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topRated2022GamesModel.swift; sourceTree = "<group>"; };
-		2ED8FBFE297C54BC00B7E3AE /* FovouriteGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FovouriteGamesViewController.swift; sourceTree = "<group>"; };
-		2ED8FC01297C58A500B7E3AE /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
 		2ED8FC15297EBA8C00B7E3AE /* LocalizableExtensiton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableExtensiton.swift; sourceTree = "<group>"; };
 		2ED8FC17297EBE9100B7E3AE /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		2ED8FC1B297EBEE400B7E3AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -218,7 +214,6 @@
 		2E409D1E29757FC2005534DF /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				2ED8FC32297F2E0C00B7E3AE /* controller */,
 				2ED8FBFD297C549E00B7E3AE /* FavouriteGamesController */,
 				2E409D1D29742EF5005534DF /* GamesSearchController */,
 				2ED8FBFC297C546F00B7E3AE /* GamesPageController */,
@@ -289,7 +284,7 @@
 		2ED8FBFD297C549E00B7E3AE /* FavouriteGamesController */ = {
 			isa = PBXGroup;
 			children = (
-				2ED8FBFE297C54BC00B7E3AE /* FovouriteGamesViewController.swift */,
+				2ED8FC33297F2E1500B7E3AE /* FavoriteController.swift */,
 			);
 			name = FavouriteGamesController;
 			path = ../Core/FavouriteGamesController;
@@ -298,7 +293,7 @@
 		2ED8FC00297C589200B7E3AE /* FavouriteCell */ = {
 			isa = PBXGroup;
 			children = (
-				2ED8FC01297C58A500B7E3AE /* FavouriteCell.swift */,
+				2ED8FC35297F2E1F00B7E3AE /* FavoriteCell.swift */,
 			);
 			path = FavouriteCell;
 			sourceTree = "<group>";
@@ -331,15 +326,6 @@
 				2ED8FC23297EE37E00B7E3AE /* LocalNotificationManager.swift */,
 			);
 			path = LocalNotificationManager;
-			sourceTree = "<group>";
-		};
-		2ED8FC32297F2E0C00B7E3AE /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				2ED8FC33297F2E1500B7E3AE /* FavoriteController.swift */,
-				2ED8FC35297F2E1F00B7E3AE /* FavoriteCell.swift */,
-			);
-			path = controller;
 			sourceTree = "<group>";
 		};
 		2FDDA79496DFA1F2DC5BAAF0 /* Frameworks */ = {
@@ -504,8 +490,6 @@
 				2EAE54932979454B00FF7AC8 /* PreviewCell.swift in Sources */,
 				2E409D2F2975A834005534DF /* GamesHeaderHorizontalController.swift in Sources */,
 				2E409CC529706B23005534DF /* SceneDelegate.swift in Sources */,
-				2ED8FC02297C58A500B7E3AE /* FavouriteCell.swift in Sources */,
-				2ED8FBFF297C54BC00B7E3AE /* FovouriteGamesViewController.swift in Sources */,
 				2E409D2D2975A693005534DF /* GamesPageHeader.swift in Sources */,
 				2EA0FC92297822AB006C1139 /* SocialApp.swift in Sources */,
 				2EA0FC88297750A3006C1139 /* Headers.swift in Sources */,
