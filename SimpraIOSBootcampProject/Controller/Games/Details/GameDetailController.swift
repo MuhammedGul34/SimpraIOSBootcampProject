@@ -8,8 +8,13 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import CoreData
 
 class GameDetailController: BaseListController, UICollectionViewDelegateFlowLayout {
+    
+    var flag : Bool = true
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var gameId: Int?
         
@@ -39,6 +44,9 @@ class GameDetailController: BaseListController, UICollectionViewDelegateFlowLayo
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: detailCellId, for: indexPath) as! GameDetailCell
             cell.game = game
+            cell.addFavoriteButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
+            
+            
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: previewCellId, for: indexPath) as! PreviewCell
@@ -71,7 +79,39 @@ class GameDetailController: BaseListController, UICollectionViewDelegateFlowLayo
             self.game = game
             DispatchQueue.main.async{
                 self.collectionView.reloadData()
-                        }
-                    }
+            }
+        }
+    }
+    
+    @objc func handleButton(button: UIButton){
+        
+        if flag {
+            flag = false
+            button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            let context = appDelegate.persistentContainer.viewContext
+            if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
+                let object = NSManagedObject(entity: entity, insertInto: context)
+                object.setValue(game?.released, forKey: "released")
+                object.setValue(game?.name, forKey: "name")
+                object.setValue(game?.descriptionRaw, forKey: "desc")
+                object.setValue(game?.backgroundImage, forKey: "image")
+                object.setValue(game?.backgroundImageAdditional, forKey: "imageAdditonal")
+                object.setValue(game?.id, forKey: "id")
+                
+                do {
+                    try context.save()
+                    print("success to save data to coredata")
+                } catch {
+                    print("Error to save coredata")
+                }
+                
+            }
+        } else {
+            flag = true
+            
+            button.setImage(UIImage(systemName: "heart"), for: .normal)
+            
+        }
+       
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayout {
     
+    let notificationCenter = UNUserNotificationCenter.current()
+    
     let cellId = "id"
     let headerId = "headerId"
     var socialApps = [SocialApp]()
@@ -23,6 +25,18 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: -Ask The User Permisson
+        notificationCenter.requestAuthorization(options: [.sound,.badge,.alert]) { success, error in
+            if error == nil {
+                print("Authorization Successfuly")
+            } else {
+                print("Authorization Failed")
+            }
+        }
+        
+        localNotification()
+        
         collectionView.register(GamesGroupCell.self, forCellWithReuseIdentifier: cellId)
         
         collectionView.register(GamesPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
@@ -83,6 +97,27 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
                 self.groups.append(group)
             }
             self.collectionView.reloadData()
+        }
+    }
+    
+    func localNotification(){
+        //MARK: Crate Trigger
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Hey Gamer"
+        content.body = "Search tons of game you are looking for!"
+        content.sound = UNNotificationSound.default
+        
+        let identifier = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { error in
+            if error == nil {
+                print("Message Sent Successfully")
+            }
         }
     }
     
