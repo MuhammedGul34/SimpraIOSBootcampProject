@@ -92,6 +92,7 @@ class FavouriteTableViewCell: UITableViewCell {
     @objc func subscribe() {
         print("Deleting row")
     }
+
     
 }
 

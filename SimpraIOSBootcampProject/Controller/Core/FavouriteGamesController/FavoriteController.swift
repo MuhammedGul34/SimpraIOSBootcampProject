@@ -42,10 +42,14 @@ class FavouriteViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
-                let context = appDelegate.persistentContainer.viewContext
-                let commit = gameCore?[indexPath.row]
+                
+                let alert = UIAlertController(title: "", message: "Silmek istediğinize emin misiniz?", preferredStyle: UIAlertController.Style.alert)
+
+            alert.addAction(UIAlertAction(title: "Sil", style: UIAlertAction.Style.default, handler: { _ in
+                let context = self.appDelegate.persistentContainer.viewContext
+                let commit = self.gameCore?[indexPath.row]
                 context.delete(commit!)
-                gameCore?.remove(at: indexPath.row)
+                self.gameCore?.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
 
                 do {
@@ -54,6 +58,14 @@ class FavouriteViewController: UITableViewController {
                     print("could not delete")
                 }
                 print("deleting objescts")
+                }))
+            alert.addAction(UIAlertAction(title: "Vazgeç", style: UIAlertAction.Style.cancel, handler: {_ in
+                DispatchQueue.main.async {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                }))
+
+                self.present(alert, animated: true, completion: nil)
             }
         }
     
@@ -71,6 +83,7 @@ class FavouriteViewController: UITableViewController {
                 print("Error while retrieving data from cache.")
             }
         }
+    
     
 //    func deleteAllRecords(entity : String) {
 //        let context = appDelegate.persistentContainer.viewContext
