@@ -46,6 +46,8 @@
 		2ED8FC16297EBA8C00B7E3AE /* LocalizableExtensiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC15297EBA8C00B7E3AE /* LocalizableExtensiton.swift */; };
 		2ED8FC1A297EBEE400B7E3AE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2ED8FC1C297EBEE400B7E3AE /* Localizable.strings */; };
 		2ED8FC24297EE37E00B7E3AE /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC23297EE37E00B7E3AE /* LocalNotificationManager.swift */; };
+		2ED8FC34297F2E1500B7E3AE /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC33297F2E1500B7E3AE /* FavoriteController.swift */; };
+		2ED8FC36297F2E1F00B7E3AE /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8FC35297F2E1F00B7E3AE /* FavoriteCell.swift */; };
 		C0A5832F4674CA13F14F15AA /* Pods_SimpraIOSBootcampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		2ED8FC1B297EBEE400B7E3AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2ED8FC1D297EBEF500B7E3AE /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2ED8FC23297EE37E00B7E3AE /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		2ED8FC33297F2E1500B7E3AE /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
+		2ED8FC35297F2E1F00B7E3AE /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		A8E239A27FA391A5E50A3946 /* Pods-SimpraIOSBootcampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.release.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.release.xcconfig"; sourceTree = "<group>"; };
 		CD5CFF5479F494A2F523BE0C /* Pods_SimpraIOSBootcampProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpraIOSBootcampProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE76E888E2C507B787EB8C9A /* Pods-SimpraIOSBootcampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpraIOSBootcampProject.debug.xcconfig"; path = "Target Support Files/Pods-SimpraIOSBootcampProject/Pods-SimpraIOSBootcampProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 		2E409D1E29757FC2005534DF /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				2ED8FC32297F2E0C00B7E3AE /* controller */,
 				2ED8FBFD297C549E00B7E3AE /* FavouriteGamesController */,
 				2E409D1D29742EF5005534DF /* GamesSearchController */,
 				2ED8FBFC297C546F00B7E3AE /* GamesPageController */,
@@ -326,6 +331,15 @@
 				2ED8FC23297EE37E00B7E3AE /* LocalNotificationManager.swift */,
 			);
 			path = LocalNotificationManager;
+			sourceTree = "<group>";
+		};
+		2ED8FC32297F2E0C00B7E3AE /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2ED8FC33297F2E1500B7E3AE /* FavoriteController.swift */,
+				2ED8FC35297F2E1F00B7E3AE /* FavoriteCell.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		2FDDA79496DFA1F2DC5BAAF0 /* Frameworks */ = {
@@ -461,6 +475,7 @@
 			files = (
 				2E409CE529716CF0005534DF /* UIView+Layout.swift in Sources */,
 				2E409CE72971783B005534DF /* VerticalStackView.swift in Sources */,
+				2ED8FC34297F2E1500B7E3AE /* FavoriteController.swift in Sources */,
 				2ED8FC24297EE37E00B7E3AE /* LocalNotificationManager.swift in Sources */,
 				2EAE5495297947A900FF7AC8 /* PreviewScreenShotsController.swift in Sources */,
 				2E409CE22971622B005534DF /* SearchResultCell.swift in Sources */,
@@ -485,6 +500,7 @@
 				2E409D2929759244005534DF /* GameRowCell.swift in Sources */,
 				2EA0FC9529788B45006C1139 /* GameDetailController.swift in Sources */,
 				2EA0FC8C29780431006C1139 /* BetterSnapping.swift in Sources */,
+				2ED8FC36297F2E1F00B7E3AE /* FavoriteCell.swift in Sources */,
 				2EAE54932979454B00FF7AC8 /* PreviewCell.swift in Sources */,
 				2E409D2F2975A834005534DF /* GamesHeaderHorizontalController.swift in Sources */,
 				2E409CC529706B23005534DF /* SceneDelegate.swift in Sources */,

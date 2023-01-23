@@ -1,14 +1,15 @@
 //
-//  FavouriteCell.swift
+//  Controller.swift
 //  SimpraIOSBootcampProject
 //
-//  Created by Muhammed Gül on 21.01.2023.
+//  Created by Muhammed Gül on 24.01.2023.
 //
+
 
 import UIKit
 import CoreData
 
-class FavouriteCell: UICollectionViewCell {
+class FavouriteTableViewCell: UITableViewCell {
     
     var gameCore: SearchEntity! {
         didSet {
@@ -56,15 +57,12 @@ class FavouriteCell: UICollectionViewCell {
 //        }
 //    }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         layer.cornerRadius = 16
         backgroundColor = .systemGray6
     
-        gameIconImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(subscribe)))
-        gameIconImageView.isUserInteractionEnabled = true
-
  
         UnaddFavoriteButton.backgroundColor = .white
         UnaddFavoriteButton.constrainHeight(constant: 80)
@@ -76,23 +74,16 @@ class FavouriteCell: UICollectionViewCell {
         UnaddFavoriteButton.addTarget(self, action: #selector(subscribe), for: .touchUpInside)
 
         
-//        let infoTopstackView = UIStackView(arrangedSubviews: [
-//        gameIconImageView,
-//        VerticalStackView(arrangedSubviews: [nameLabel, releaseTimeLabel, ratingLabel])])
-//
-//        infoTopstackView.spacing = 12
-//        infoTopstackView.alignment = .center
-//
-//
-//        let overallStackView = VerticalStackView(arrangedSubviews: [infoTopstackView, UnaddFavoriteButton])
-//        overallStackView.distribution = .fillEqually
-//        addSubview(overallStackView)
-//        overallStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
-//
-//
-        
-        addSubview(UnaddFavoriteButton)
-        UnaddFavoriteButton.fillSuperview(padding: .init(top: 30, left: 30, bottom: 30, right: 30))
+        let infoTopstackView = UIStackView(arrangedSubviews: [
+        gameIconImageView,
+        VerticalStackView(arrangedSubviews: [nameLabel, releaseTimeLabel, ratingLabel])])
+
+        infoTopstackView.spacing = 12
+        infoTopstackView.alignment = .center
+
+        addSubview(infoTopstackView)
+        infoTopstackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
+
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

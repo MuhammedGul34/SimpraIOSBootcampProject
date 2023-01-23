@@ -21,6 +21,7 @@ class FovouriteGamesViewController: BaseListController, UICollectionViewDelegate
 //        
 //        deleteAllRecords(entity : "SearchEntity")
         
+        
         retrieveFromCoreData()
         
         collectionView.register(FavouriteCell.self, forCellWithReuseIdentifier: cellId)
@@ -31,17 +32,40 @@ class FovouriteGamesViewController: BaseListController, UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FavouriteCell
+      
         cell.gameCore = gameCore?[indexPath.row]
         self.collectionView.reloadData()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 48 , height: 100)
+        return .init(width: view.frame.width - 48 , height: 200)
     }
+    
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+        retrieveFromCoreData()
+        }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let commit = (gameCore?[indexPath.row])!
+                  context.delete(commit)
+                  gameCore?.remove(at: indexPath.row )
+                  collectionView.deleteItems(at: [indexPath])
+
+                  do {
+                      try context.save()
+                  } catch {
+                      print("could not delete")
+                  }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
