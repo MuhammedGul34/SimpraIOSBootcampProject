@@ -63,7 +63,6 @@ class FavouriteCell: UICollectionViewCell {
         layer.cornerRadius = 16
         backgroundColor = .systemGray6
       
-        
         let infoTopstackView = UIStackView(arrangedSubviews: [
         gameIconImageView,
         VerticalStackView(arrangedSubviews: [nameLabel, releaseTimeLabel, ratingLabel])])
@@ -71,9 +70,7 @@ class FavouriteCell: UICollectionViewCell {
         infoTopstackView.spacing = 12
         infoTopstackView.alignment = .center
         
-        let overallStackView = VerticalStackView(arrangedSubviews: [infoTopstackView
-//                                                                    , TextView
-                                                                   ])
+        let overallStackView = VerticalStackView(arrangedSubviews: [infoTopstackView])
         
         addSubview(overallStackView)
         overallStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
@@ -82,12 +79,5 @@ class FavouriteCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    
 }
-//
-//extension FovouriteGamesViewController: UITextViewDelegate{
-//    func textViewDidChange(_ textView: UITextView) {
-//        print(textView.text)
-//    }
-//}
+

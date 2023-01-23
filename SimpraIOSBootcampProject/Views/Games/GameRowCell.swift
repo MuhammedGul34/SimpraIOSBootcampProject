@@ -10,10 +10,8 @@ import UIKit
 class GameRowCell: UICollectionViewCell {
     
     let imageView = UIImageView(cornerRadius: 8)
-    
     let nameLabel = UILabel(text: "Game Name", font: .systemFont(ofSize: 20))
     let released = UILabel(text: "Company Name", font: .systemFont(ofSize: 13))
-    
     let getButton = UIButton(title: "GET")
     
     override init(frame: CGRect) {

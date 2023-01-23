@@ -78,9 +78,6 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
             group3 = TopRatedGamesOf2022
         }
         
-        
-        
-        
         // completion
         dispatchGroup.notify(queue: .main) {
             print("completed your dispatch group tasks...")

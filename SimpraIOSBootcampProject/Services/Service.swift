@@ -15,8 +15,6 @@ class Service {
         "https://api.rawg.io/api/games?key=e88f2727475f49fb903d6aaf20975174&search=\(searchTerm)&page=1"
         
         fetchGenericJSONData(urlString: urlString, completion: completion)
-        // TODO: Search Term adding
-
     }
    
     
@@ -36,9 +34,6 @@ class Service {
         let urlString = "https://api.rawg.io/api/games?dates=2001-01-01,2001-12-31&ordering=-rating&key=e88f2727475f49fb903d6aaf20975174"
        fetchGenericJSONData(urlString: urlString, completion: completion)
     }
-    
-    
-    
     
     func fetchGenericJSONData<T: Decodable>(urlString: String, completion: @escaping (T?, Error?) -> ()){
         guard let url = URL(string: urlString) else { return }
