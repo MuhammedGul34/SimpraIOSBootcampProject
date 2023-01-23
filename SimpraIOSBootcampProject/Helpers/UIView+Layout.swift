@@ -40,7 +40,6 @@ extension UIView {
         }
         
         [anchoredConstraints.top, anchoredConstraints.leading, anchoredConstraints.bottom, anchoredConstraints.trailing, anchoredConstraints.width, anchoredConstraints.height].forEach{ $0?.isActive = true }
-        
         return anchoredConstraints
     }
     

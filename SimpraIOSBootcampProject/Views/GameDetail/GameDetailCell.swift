@@ -48,8 +48,6 @@ class GameDetailCell: UICollectionViewCell {
         addFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
         addFavoriteButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
         
-        
-        
         let stackView = VerticalStackView(arrangedSubviews: [
             UIStackView(arrangedSubviews: [
                 gameIconImageView,
@@ -71,8 +69,6 @@ class GameDetailCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
     @objc func handleButton(){
         
         if flag {
@@ -87,7 +83,7 @@ class GameDetailCell: UICollectionViewCell {
                 object.setValue(game.backgroundImage, forKey: "image")
                 object.setValue(game.backgroundImageAdditional, forKey: "imageAdditonal")
                 object.setValue(game.id, forKey: "id")
-                
+    
                 do {
                     try context.save()
                     print("success to save data to coredata")

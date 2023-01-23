@@ -13,7 +13,6 @@ class GamesGroupCell: UICollectionViewCell {
 
     let horizontalController = GameHorizontalController()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
