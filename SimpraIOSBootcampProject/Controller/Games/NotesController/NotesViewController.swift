@@ -41,6 +41,7 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
          
          let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.identifier, for: indexPath) as! NoteTableViewCell
          cell.viewController = self
+         cell.selectionStyle = .none
         return cell
     }
     

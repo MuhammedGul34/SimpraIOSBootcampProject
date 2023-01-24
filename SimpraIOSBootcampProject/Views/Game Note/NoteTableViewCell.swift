@@ -62,14 +62,14 @@ class NoteTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        gamenametextField.frame = CGRect(x: 10, y: 10, width: contentView.frame.size.width - 20 , height: 30)
-        gameNoteTextField.frame = CGRect(x: 10, y:30+gamenametextField.frame.size.height,
+        gamenametextField.frame = CGRect(x: 10, y: 40, width: contentView.frame.size.width - 20 , height: 30)
+        gameNoteTextField.frame = CGRect(x: 10, y:60+gamenametextField.frame.size.height,
                                          width: contentView.frame.size.width - 20, height: 150)
-        saveButton.frame = CGRect(x:contentView.frame.size.width / 2 - 40, y: 80+gameNoteTextField.frame.size.height, width: 80, height: 32)
+        saveButton.frame = CGRect(x:contentView.frame.size.width / 2 - 40, y: 100+gameNoteTextField.frame.size.height, width: 80, height: 32)
     }
     
     @objc func handleSaveText(){
-        if  gamenametextField.text?.count ?? 0 > 1 && gameNoteTextField.text?.count ?? 0 > 1 {
+        if  gamenametextField.text?.count ?? 0 > 0 && gameNoteTextField.text?.count ?? 0 > 0 {
             print("Successssssssss")
 //            let context = appDelegate.persistentContainer.viewContext
 //            if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
