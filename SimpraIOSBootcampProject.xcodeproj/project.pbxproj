@@ -32,6 +32,9 @@
 		2E409D322975AA86005534DF /* GameHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E409D312975AA86005534DF /* GameHeaderCell.swift */; };
 		2E7F2388297FE4B000EEC1F6 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7F2387297FE4B000EEC1F6 /* NotesViewController.swift */; };
 		2E7F238B297FE9FF00EEC1F6 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7F238A297FE9FF00EEC1F6 /* NoteTableViewCell.swift */; };
+		2E7F23912980644000EEC1F6 /* ExtensionNotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7F23902980644000EEC1F6 /* ExtensionNotesController.swift */; };
+		2E7F2393298065E700EEC1F6 /* ExtensionFavouriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7F2392298065E700EEC1F6 /* ExtensionFavouriteController.swift */; };
+		2E7F2397298066EC00EEC1F6 /* ExtensionPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7F2396298066EC00EEC1F6 /* ExtensionPageController.swift */; };
 		2EA0FC88297750A3006C1139 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC87297750A3006C1139 /* Headers.swift */; };
 		2EA0FC8A2977F8DA006C1139 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC892977F8DA006C1139 /* HorizontalSnappingController.swift */; };
 		2EA0FC8C29780431006C1139 /* BetterSnapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0FC8B29780431006C1139 /* BetterSnapping.swift */; };
@@ -79,6 +82,9 @@
 		2E409D312975AA86005534DF /* GameHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHeaderCell.swift; sourceTree = "<group>"; };
 		2E7F2387297FE4B000EEC1F6 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		2E7F238A297FE9FF00EEC1F6 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		2E7F23902980644000EEC1F6 /* ExtensionNotesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNotesController.swift; sourceTree = "<group>"; };
+		2E7F2392298065E700EEC1F6 /* ExtensionFavouriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFavouriteController.swift; sourceTree = "<group>"; };
+		2E7F2396298066EC00EEC1F6 /* ExtensionPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPageController.swift; sourceTree = "<group>"; };
 		2EA0FC87297750A3006C1139 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
 		2EA0FC892977F8DA006C1139 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		2EA0FC8B29780431006C1139 /* BetterSnapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnapping.swift; sourceTree = "<group>"; };
@@ -251,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				2E7F2387297FE4B000EEC1F6 /* NotesViewController.swift */,
+				2E7F23902980644000EEC1F6 /* ExtensionNotesController.swift */,
 			);
 			path = NotesController;
 			sourceTree = "<group>";
@@ -295,6 +302,31 @@
 			path = GamesRowCell;
 			sourceTree = "<group>";
 		};
+		2E7F23982980670200EEC1F6 /* GameListGamesGroup */ = {
+			isa = PBXGroup;
+			children = (
+				2E409D1F29757FD7005534DF /* GamesPageController.swift */,
+				2E7F2396298066EC00EEC1F6 /* ExtensionPageController.swift */,
+			);
+			path = GameListGamesGroup;
+			sourceTree = "<group>";
+		};
+		2E7F23992980672100EEC1F6 /* GamesHeaderHorizontalGroup */ = {
+			isa = PBXGroup;
+			children = (
+				2E409D2E2975A834005534DF /* GamesHeaderHorizontalController.swift */,
+			);
+			path = GamesHeaderHorizontalGroup;
+			sourceTree = "<group>";
+		};
+		2E7F239A2980674900EEC1F6 /* GamesHorizontalController */ = {
+			isa = PBXGroup;
+			children = (
+				2E409D262975878A005534DF /* GameHorizontalController.swift */,
+			);
+			path = GamesHorizontalController;
+			sourceTree = "<group>";
+		};
 		2EA0FC8F2978227D006C1139 /* Model-RAWG */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,9 +360,9 @@
 		2ED8FBFC297C546F00B7E3AE /* GamesPageController */ = {
 			isa = PBXGroup;
 			children = (
-				2E409D1F29757FD7005534DF /* GamesPageController.swift */,
-				2E409D2E2975A834005534DF /* GamesHeaderHorizontalController.swift */,
-				2E409D262975878A005534DF /* GameHorizontalController.swift */,
+				2E7F239A2980674900EEC1F6 /* GamesHorizontalController */,
+				2E7F23992980672100EEC1F6 /* GamesHeaderHorizontalGroup */,
+				2E7F23982980670200EEC1F6 /* GameListGamesGroup */,
 			);
 			path = GamesPageController;
 			sourceTree = "<group>";
@@ -339,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				2ED8FC33297F2E1500B7E3AE /* FavoriteController.swift */,
+				2E7F2392298065E700EEC1F6 /* ExtensionFavouriteController.swift */,
 			);
 			name = GamesFavouriteController;
 			path = ../Core/GamesFavouriteController;
@@ -513,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7F23912980644000EEC1F6 /* ExtensionNotesController.swift in Sources */,
 				2E409CE529716CF0005534DF /* UIView+Layout.swift in Sources */,
 				2E409CE72971783B005534DF /* VerticalStackView.swift in Sources */,
 				2ED8FC34297F2E1500B7E3AE /* FavoriteController.swift in Sources */,
@@ -529,6 +563,7 @@
 				2EAE548E2978A82C00FF7AC8 /* GameDetailModel.swift in Sources */,
 				2EAE549129792C9C00FF7AC8 /* GameDetailCell.swift in Sources */,
 				2E409CDA29713F82005534DF /* BaseTabBarController.swift in Sources */,
+				2E7F2393298065E700EEC1F6 /* ExtensionFavouriteController.swift in Sources */,
 				2E409D322975AA86005534DF /* GameHeaderCell.swift in Sources */,
 				2E409D1B29742E96005534DF /* Service.swift in Sources */,
 				2E409D2029757FD7005534DF /* GamesPageController.swift in Sources */,
@@ -538,6 +573,7 @@
 				2ED8FC16297EBA8C00B7E3AE /* LocalizableExtensiton.swift in Sources */,
 				2E409CC329706B23005534DF /* AppDelegate.swift in Sources */,
 				2E409D2B29759324005534DF /* Extensions.swift in Sources */,
+				2E7F2397298066EC00EEC1F6 /* ExtensionPageController.swift in Sources */,
 				2E409D2929759244005534DF /* GameRowCell.swift in Sources */,
 				2EA0FC9529788B45006C1139 /* GameDetailController.swift in Sources */,
 				2EA0FC8C29780431006C1139 /* BetterSnapping.swift in Sources */,

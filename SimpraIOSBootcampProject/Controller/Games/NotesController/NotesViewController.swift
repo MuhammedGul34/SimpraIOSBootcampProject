@@ -33,32 +33,12 @@ class NotesViewController: UIViewController {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
       }
-    }
-
- 
-extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
+    
     override func viewDidAppear(_ animated: Bool) {super.viewDidAppear(true)
         getData()
     }
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         
-         let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.identifier, for: indexPath) as! NoteTableViewCell
-         cell.viewController = self
-         cell.selectionStyle = .none
-         cell.gameNote = gameNote?[indexPath.row]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300 
-    }
-    
-    private func getData(){
+    func getData(){
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NoteEntity>(entityName: "NoteEntity")
         do {
@@ -69,7 +49,7 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
             }
         } catch {
             print("Error while retrieving data from cache.")
+            }
         }
     }
-    
-}
+
