@@ -12,7 +12,7 @@ class NoteTableViewCell: UITableViewCell {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-    var gameNote: SearchEntity! {
+    var gameNote: NoteEntity! {
         didSet {
             if let name = gameNote.map({$0.gameNameLabel}) {
                 gamenametextField.text = name
@@ -81,7 +81,7 @@ class NoteTableViewCell: UITableViewCell {
     @objc func handleSaveText(){
         if  gamenametextField.text?.count ?? 0 > 0 && gameNoteTextField.text?.count ?? 0 > 0 {
             let context = appDelegate.persistentContainer.viewContext
-            if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
+            if let entity = NSEntityDescription.entity(forEntityName: "NoteEntity", in: context){
                 let object = NSManagedObject(entity: entity, insertInto: context)
                 object.setValue(gamenametextField.text, forKey: "gameNameLabel")
                 object.setValue(gameNoteTextField.text, forKey: "gameCommentLabel")

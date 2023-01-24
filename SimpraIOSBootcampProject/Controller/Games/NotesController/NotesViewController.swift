@@ -12,7 +12,7 @@ class NotesViewController: UIViewController {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var gameNote: [SearchEntity]?
+    var gameNote: [NoteEntity]?
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -63,7 +63,7 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
     
     private func getData(){
         let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<SearchEntity>(entityName: "SearchEntity")
+        let request = NSFetchRequest<NoteEntity>(entityName: "NoteEntity")
 
         do {
             let result = try context.fetch(request)

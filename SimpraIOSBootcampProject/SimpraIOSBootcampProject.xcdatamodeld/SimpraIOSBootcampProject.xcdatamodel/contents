@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="SearchEntity" representedClassName="SearchEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="desc" optional="YES" attributeType="String"/>
+    <entity name="NoteEntity" representedClassName="NoteEntity" syncable="YES" codeGenerationType="class">
         <attribute name="gameCommentLabel" optional="YES" attributeType="String"/>
         <attribute name="gameNameLabel" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="SearchEntity" representedClassName="SearchEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" attributeType="String"/>
         <attribute name="imageAdditonal" optional="YES" attributeType="String"/>
