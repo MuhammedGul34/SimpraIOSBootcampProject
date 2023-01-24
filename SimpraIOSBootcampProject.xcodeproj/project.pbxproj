@@ -166,10 +166,10 @@
 		2E409CDE297161DF005534DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2ED8FC00297C589200B7E3AE /* FavouriteCell */,
+				2ED8FC00297C589200B7E3AE /* Game Favourite */,
 				2EAE548F29792C8700FF7AC8 /* GameDetail */,
-				2E409D302975AA49005534DF /* Search */,
-				2E409D2329758414005534DF /* Games */,
+				2E409D302975AA49005534DF /* Game Search */,
+				2E409D2329758414005534DF /* Games Page */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 		2E409D1E29757FC2005534DF /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				2ED8FBFD297C549E00B7E3AE /* FavouriteGamesController */,
+				2ED8FBFD297C549E00B7E3AE /* GamesFavouriteController */,
 				2E409D1D29742EF5005534DF /* GamesSearchController */,
 				2ED8FBFC297C546F00B7E3AE /* GamesPageController */,
 				2EA0FC9329788B22006C1139 /* GamesDetailsPageController */,
@@ -222,7 +222,7 @@
 			path = Games;
 			sourceTree = "<group>";
 		};
-		2E409D2329758414005534DF /* Games */ = {
+		2E409D2329758414005534DF /* Games Page */ = {
 			isa = PBXGroup;
 			children = (
 				2E409D2429758446005534DF /* GamesGroupCell.swift */,
@@ -230,15 +230,15 @@
 				2E409D2C2975A693005534DF /* GamesPageHeader.swift */,
 				2E409D312975AA86005534DF /* GameHeaderCell.swift */,
 			);
-			path = Games;
+			path = "Games Page";
 			sourceTree = "<group>";
 		};
-		2E409D302975AA49005534DF /* Search */ = {
+		2E409D302975AA49005534DF /* Game Search */ = {
 			isa = PBXGroup;
 			children = (
 				2E409CE12971622B005534DF /* SearchResultCell.swift */,
 			);
-			path = Search;
+			path = "Game Search";
 			sourceTree = "<group>";
 		};
 		2EA0FC8F2978227D006C1139 /* Model-RAWG */ = {
@@ -281,21 +281,21 @@
 			path = GamesPageController;
 			sourceTree = "<group>";
 		};
-		2ED8FBFD297C549E00B7E3AE /* FavouriteGamesController */ = {
+		2ED8FBFD297C549E00B7E3AE /* GamesFavouriteController */ = {
 			isa = PBXGroup;
 			children = (
 				2ED8FC33297F2E1500B7E3AE /* FavoriteController.swift */,
 			);
-			name = FavouriteGamesController;
-			path = ../Core/FavouriteGamesController;
+			name = GamesFavouriteController;
+			path = ../Core/GamesFavouriteController;
 			sourceTree = "<group>";
 		};
-		2ED8FC00297C589200B7E3AE /* FavouriteCell */ = {
+		2ED8FC00297C589200B7E3AE /* Game Favourite */ = {
 			isa = PBXGroup;
 			children = (
 				2ED8FC35297F2E1F00B7E3AE /* FavoriteCell.swift */,
 			);
-			path = FavouriteCell;
+			path = "Game Favourite";
 			sourceTree = "<group>";
 		};
 		2ED8FC14297EBA7A00B7E3AE /* Localizable */ = {

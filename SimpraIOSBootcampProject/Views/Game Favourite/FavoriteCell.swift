@@ -48,14 +48,6 @@ class FavouriteTableViewCell: UITableViewCell {
         return label
     }()
     var UnaddFavoriteButton = UIButton()
-
-//    {
-//        didSet
-//        {
-//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(subscribe))
-//            UnaddFavoriteButton.addGestureRecognizer(tapGestureRecognizer)
-//        }
-//    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
