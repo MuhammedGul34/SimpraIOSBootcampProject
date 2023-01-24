@@ -10,11 +10,24 @@ import CoreData
 
 class NoteTableViewCell: UITableViewCell {
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    
+    var gameNote: SearchEntity! {
+        didSet {
+            if let name = gameNote.map({$0.gameNameLabel}) {
+                gamenametextField.text = name
+            }
+            if let note = gameNote.map({$0.gameCommentLabel}){
+                gameNoteTextField.text = note
+            }
+        }
+    }
+    
     weak var viewController : NotesViewController? = nil
     
     static let identifier = "NoteTableViewCell"
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+  
     var gamenametextField : UITextField = {
         let txtGameName = UITextField()
         txtGameName.placeholder = "Please enter the game to note".localized()
@@ -70,26 +83,28 @@ class NoteTableViewCell: UITableViewCell {
     
     @objc func handleSaveText(){
         if  gamenametextField.text?.count ?? 0 > 0 && gameNoteTextField.text?.count ?? 0 > 0 {
-            print("Successssssssss")
-//            let context = appDelegate.persistentContainer.viewContext
-//            if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
-//                let object = NSManagedObject(entity: entity, insertInto: context)
-//                object.setValue(gamenametextField.text, forKey: "gameNameLabel")
-//                object.setValue(gameNoteTextField, forKey: "gameCommentLabel")
-//
-//                do {
-//                    try context.save()
-//                    print("success to save GameNotes to coredata")
-//                } catch {
-//                    print("Error to save coredata")
-//                }
+            let context = appDelegate.persistentContainer.viewContext
+            if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
+                let object = NSManagedObject(entity: entity, insertInto: context)
+                object.setValue(gamenametextField.text, forKey: "gameNameLabel")
+                object.setValue(gameNoteTextField, forKey: "gameCommentLabel")
+                
+                do {
+                    try context.save()
+                    print("success to save GameNotes to coredata")
+                } catch {
+                    print("Error to save coredata")
+                }
                 
             } else {
                 let alert = UIAlertController(title: "Textfields cannot be nil!".localized(), message: "Please enter your comment before saving.".localized(), preferredStyle: UIAlertController.Style.alert)
-
+                
                 alert.addAction(UIAlertAction(title: "Oops!".localized(), style: .cancel))
                 viewController?.present(alert, animated: true, completion: nil)            }
         }
-       
+        
     }
-
+    
+    
+    
+}

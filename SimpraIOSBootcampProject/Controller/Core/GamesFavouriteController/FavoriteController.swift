@@ -33,7 +33,8 @@ class FavouriteViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {super.viewDidAppear(true)
-        retrieveFromCoreData()}
+        retrieveFromCoreData()
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let _ = self.navigationController?.pushViewController(NotesViewController(), animated: true)
