@@ -17,6 +17,7 @@ class BaseTabBarController: UITabBarController {
             createNavController(viewController: GamesSearchController(), title: "Search".localized(), imageName: "search"),
             createNavController(viewController: FavouriteViewController(), title: "Favorite".localized(), imageName: "today_icon"),
         ]
+      
     }
     fileprivate func createNavController(viewController: UIViewController, title: String, imageName: String) -> UIViewController {
         

@@ -11,9 +11,8 @@ import CoreData
 class GameDetailCell: UICollectionViewCell {
     
     var flag : Bool = true
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+
     var game: GamesDetailsResult! {
         didSet {
             releasedLabel.text = "Released: \(game?.released ?? "2013-08-13")"
@@ -24,13 +23,9 @@ class GameDetailCell: UICollectionViewCell {
     }
     
     let gameIconImageView = UIImageView(cornerRadius: 16)
-    
     let nameLabel = UILabel(text: "Game Name", font: .boldSystemFont(ofSize: 24), numberOflines: 2 )
-    
     let releasedLabel = UILabel(text: "Released", font: .boldSystemFont(ofSize: 16))
-    
     let addFavoriteButton = UIButton(type: .custom)
-    
     let descriptionLabel = UILabel(text: "Description", font: .systemFont(ofSize: 14), numberOflines: 0)
     
     override init(frame: CGRect) {
@@ -70,7 +65,6 @@ class GameDetailCell: UICollectionViewCell {
     }
     
     @objc func handleButton(){
-        
         if flag {
             flag = false
             addFavoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -86,20 +80,16 @@ class GameDetailCell: UICollectionViewCell {
     
                 do {
                     try context.save()
-                    print("success to save data to coredata")
                 } catch {
                     print("Error to save coredata")
                 }
-                
             }
         } else {
             flag = true
             addFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
-       
     }
 }
-
 
 extension UIStackView {
     convenience init(arrangedSubviews: [UIView], customSpacing: CGFloat = 0) {

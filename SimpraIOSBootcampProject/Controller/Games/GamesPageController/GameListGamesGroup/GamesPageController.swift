@@ -46,33 +46,29 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         var group2: TopRatedGamesOf2022?
         var group3: TopRatedGamesOf2022?
         
-        // help you sync your data fetches together
+        // help us sync our data fetches together
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
         Service.shared.fetchTopRatedGames { (TopRatedGamesOf2022, err) in
-            print("Done with top grossing")
             dispatchGroup.leave()
             group1 = TopRatedGamesOf2022
         }
         
         dispatchGroup.enter()
         Service.shared.GamesBest{ (TopRatedGamesOf2022, err) in
-            print("Done with top grossing")
             dispatchGroup.leave()
             group2 = TopRatedGamesOf2022
         }
         
         dispatchGroup.enter()
         Service.shared.Games2001{ (TopRatedGamesOf2022, err) in
-            print("Done with top grossing")
             dispatchGroup.leave()
             group3 = TopRatedGamesOf2022
         }
         
         // completion
         dispatchGroup.notify(queue: .main) {
-            print("completed your dispatch group tasks...")
             
             self.activityIndicatorView.stopAnimating()
             
@@ -140,19 +136,4 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
     }
 }
 
-extension GamesPageController {
-    func localNotification() {
-            NotificationCenter.default.addObserver(self, selector: #selector(newNoteSaved), name: Notification.Name("NoteNotification"), object: nil)
-        }
 
-        @objc func newNoteSaved() {
-            let notificationManager: NotificationProtocol = LocalNotificationManager.shared
-            notificationManager.sendNotification(title: "Welcome!", message: "Explore the Brand New Games!")
-        }
-
-        func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                    willPresent notification: UNNotification,
-                                    withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-            completionHandler([.sound, .banner, .badge, .list])
-        }
-}

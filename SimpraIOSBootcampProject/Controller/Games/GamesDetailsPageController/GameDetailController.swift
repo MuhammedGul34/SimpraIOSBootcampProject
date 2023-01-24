@@ -12,7 +12,6 @@ import SDWebImage
 class GameDetailController: BaseListController, UICollectionViewDelegateFlowLayout {
     
     var gameId: Int?
-        
     var game: GamesDetailsResult?
         
     let detailCellId = "detailCellId"
@@ -71,7 +70,7 @@ class GameDetailController: BaseListController, UICollectionViewDelegateFlowLayo
             self.game = game
             DispatchQueue.main.async{
                 self.collectionView.reloadData()
-                        }
-                    }
+            }
+        }
     }
 }

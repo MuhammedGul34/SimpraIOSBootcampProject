@@ -13,7 +13,6 @@ class FavouriteTableViewCell: UITableViewCell {
     
     var gameCore: SearchEntity! {
         didSet {
-    
             nameLabel.text = gameCore.map{$0.name ?? "Game"}
             releaseTimeLabel.text = gameCore.map{$0.released ?? "Game"}
             ratingLabel.text = gameCore.map{"ID: \($0.id)"}
@@ -47,15 +46,6 @@ class FavouriteTableViewCell: UITableViewCell {
         label.text = "1.25M"
         return label
     }()
-    var UnaddFavoriteButton = UIButton()
-
-//    {
-//        didSet
-//        {
-//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(subscribe))
-//            UnaddFavoriteButton.addGestureRecognizer(tapGestureRecognizer)
-//        }
-//    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -63,17 +53,6 @@ class FavouriteTableViewCell: UITableViewCell {
         layer.cornerRadius = 16
         backgroundColor = .systemGray6
     
- 
-        UnaddFavoriteButton.backgroundColor = .white
-        UnaddFavoriteButton.constrainHeight(constant: 80)
-        UnaddFavoriteButton.layer.cornerRadius = 80 / 2
-        UnaddFavoriteButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        UnaddFavoriteButton.setTitleColor(.white, for: .normal)
-        UnaddFavoriteButton.constrainWidth(constant: 150)
-        UnaddFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        UnaddFavoriteButton.addTarget(self, action: #selector(subscribe), for: .touchUpInside)
-
-        
         let infoTopstackView = UIStackView(arrangedSubviews: [
         gameIconImageView,
         VerticalStackView(arrangedSubviews: [nameLabel, releaseTimeLabel, ratingLabel])])
@@ -88,11 +67,5 @@ class FavouriteTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @objc func subscribe() {
-        print("Deleting row")
-    }
-
-    
 }
 
