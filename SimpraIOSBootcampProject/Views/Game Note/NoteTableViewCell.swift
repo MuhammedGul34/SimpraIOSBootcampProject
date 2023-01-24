@@ -87,13 +87,13 @@ class NoteTableViewCell: UITableViewCell {
             if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
                 let object = NSManagedObject(entity: entity, insertInto: context)
                 object.setValue(gamenametextField.text, forKey: "gameNameLabel")
-                object.setValue(gameNoteTextField, forKey: "gameCommentLabel")
-                
+                object.setValue(gameNoteTextField.text, forKey: "gameCommentLabel")
+            }
                 do {
                     try context.save()
                     print("success to save GameNotes to coredata")
                 } catch {
-                    print("Error to save coredata")
+                    print("Error to save coredata",error)
                 }
                 
             } else {
@@ -107,4 +107,4 @@ class NoteTableViewCell: UITableViewCell {
     
     
     
-}
+
