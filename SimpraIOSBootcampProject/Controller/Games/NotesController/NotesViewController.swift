@@ -64,12 +64,14 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
     private func getData(){
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NoteEntity>(entityName: "NoteEntity")
-
         do {
             let result = try context.fetch(request)
-            self.gameNote = result
-            self.tableView.reloadData()
-            print("Data Camed From CoreData\(result)")
+            if result.count > 0 {
+                self.gameNote = result
+                self.tableView.reloadData()
+                print("Data Camed From CoreData\(result)")
+            }
+           
         } catch {
             print("Error while retrieving data from cache.")
         }
