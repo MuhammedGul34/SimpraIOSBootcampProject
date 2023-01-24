@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class FavouriteViewController: UITableViewController {
-    
+   
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var gameCore: [SearchEntity]?
     let cellId = "cellid"

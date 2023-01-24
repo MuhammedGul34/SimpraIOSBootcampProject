@@ -38,7 +38,9 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.identifier, for: indexPath)
+         
+         let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.identifier, for: indexPath) as! NoteTableViewCell
+         cell.viewController = self
         return cell
     }
     

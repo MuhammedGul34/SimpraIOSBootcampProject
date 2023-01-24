@@ -6,21 +6,27 @@
 //
 
 import UIKit
+import CoreData
 
 class NoteTableViewCell: UITableViewCell {
     
+    weak var viewController : NotesViewController? = nil
+    
     static let identifier = "NoteTableViewCell"
-
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     var gamenametextField : UITextField = {
         let txtGameName = UITextField()
         txtGameName.placeholder = "Please enter the game to note".localized()
         txtGameName.backgroundColor = .white
+        txtGameName.layer.cornerRadius = 5
         return txtGameName
     }()
     var gameNoteTextField : UITextField = {
         let TextField = UITextField()
         TextField.backgroundColor = .white
         TextField.placeholder = "Please enter the note the game".localized()
+        TextField.layer.cornerRadius = 5
         return TextField
     }()
     
@@ -33,17 +39,19 @@ class NoteTableViewCell: UITableViewCell {
         button.widthAnchor.constraint(equalToConstant: 80).isActive = true
         button.heightAnchor.constraint(equalToConstant: 32).isActive = true
         button.layer.cornerRadius = 16
+        button.addTarget(self, action: #selector(handleSaveText), for: .touchUpInside)
         return button
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-     
-        contentView.layer.cornerRadius = 16
+        
+        contentView.layer.cornerRadius = 30
         contentView.backgroundColor = .systemGray6
         contentView.addSubview(gamenametextField)
         contentView.addSubview(gameNoteTextField)
         contentView.addSubview(saveButton)
+        
         
     }
     
@@ -53,13 +61,35 @@ class NoteTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        gamenametextField.frame = CGRect(x: 5, y: 10, width: contentView.frame.size.width - 16 , height: 30)
         
-        gameNoteTextField.frame = CGRect(x: 5, y:30+gamenametextField.frame.size.height,
-                                         width: contentView.frame.size.width - 16, height: 150)
-        
-        saveButton.frame = CGRect(x:contentView.frame.size.width / 2 - 40, y: 70+gameNoteTextField.frame.size.height, width: 80, height: 32)
+        gamenametextField.frame = CGRect(x: 10, y: 10, width: contentView.frame.size.width - 20 , height: 30)
+        gameNoteTextField.frame = CGRect(x: 10, y:30+gamenametextField.frame.size.height,
+                                         width: contentView.frame.size.width - 20, height: 150)
+        saveButton.frame = CGRect(x:contentView.frame.size.width / 2 - 40, y: 80+gameNoteTextField.frame.size.height, width: 80, height: 32)
     }
     
-        
-}
+    @objc func handleSaveText(){
+        if  gamenametextField.text?.count ?? 0 > 1 && gameNoteTextField.text?.count ?? 0 > 1 {
+            print("Successssssssss")
+//            let context = appDelegate.persistentContainer.viewContext
+//            if let entity = NSEntityDescription.entity(forEntityName: "SearchEntity", in: context){
+//                let object = NSManagedObject(entity: entity, insertInto: context)
+//                object.setValue(gamenametextField.text, forKey: "gameNameLabel")
+//                object.setValue(gameNoteTextField, forKey: "gameCommentLabel")
+//
+//                do {
+//                    try context.save()
+//                    print("success to save GameNotes to coredata")
+//                } catch {
+//                    print("Error to save coredata")
+//                }
+                
+            } else {
+                let alert = UIAlertController(title: "Textfields cannot be nil!".localized(), message: "Please enter your comment before saving.".localized(), preferredStyle: UIAlertController.Style.alert)
+
+                alert.addAction(UIAlertAction(title: "Oops!".localized(), style: .cancel))
+                viewController?.present(alert, animated: true, completion: nil)            }
+        }
+       
+    }
+
