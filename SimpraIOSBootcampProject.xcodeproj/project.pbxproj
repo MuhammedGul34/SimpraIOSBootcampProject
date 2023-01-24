@@ -186,6 +186,7 @@
 				2E409CE62971783B005534DF /* VerticalStackView.swift */,
 				2E409D2A29759324005534DF /* Extensions.swift */,
 				2EA0FC8B29780431006C1139 /* BetterSnapping.swift */,
+				2EA0FC892977F8DA006C1139 /* HorizontalSnappingController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -203,7 +204,6 @@
 			children = (
 				2E409CD929713F82005534DF /* BaseTabBarController.swift */,
 				2E409D212975808E005534DF /* BaseListController.swift */,
-				2EA0FC892977F8DA006C1139 /* HorizontalSnappingController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -231,10 +231,10 @@
 		2E409D2329758414005534DF /* Games Page */ = {
 			isa = PBXGroup;
 			children = (
-				2E409D2429758446005534DF /* GamesGroupCell.swift */,
-				2E409D2829759244005534DF /* GameRowCell.swift */,
-				2E409D2C2975A693005534DF /* GamesPageHeader.swift */,
-				2E409D312975AA86005534DF /* GameHeaderCell.swift */,
+				2E7F238F2980607A00EEC1F6 /* GamesRowCell */,
+				2E7F238E2980606E00EEC1F6 /* GamesGroupCell */,
+				2E7F238D2980601C00EEC1F6 /* GamesPageCell */,
+				2E7F238C29805FF900EEC1F6 /* GamesHeaderCell */,
 			);
 			path = "Games Page";
 			sourceTree = "<group>";
@@ -261,6 +261,38 @@
 				2E7F238A297FE9FF00EEC1F6 /* NoteTableViewCell.swift */,
 			);
 			path = "Game Note";
+			sourceTree = "<group>";
+		};
+		2E7F238C29805FF900EEC1F6 /* GamesHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E409D312975AA86005534DF /* GameHeaderCell.swift */,
+			);
+			path = GamesHeaderCell;
+			sourceTree = "<group>";
+		};
+		2E7F238D2980601C00EEC1F6 /* GamesPageCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E409D2C2975A693005534DF /* GamesPageHeader.swift */,
+			);
+			path = GamesPageCell;
+			sourceTree = "<group>";
+		};
+		2E7F238E2980606E00EEC1F6 /* GamesGroupCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E409D2429758446005534DF /* GamesGroupCell.swift */,
+			);
+			path = GamesGroupCell;
+			sourceTree = "<group>";
+		};
+		2E7F238F2980607A00EEC1F6 /* GamesRowCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E409D2829759244005534DF /* GameRowCell.swift */,
+			);
+			path = GamesRowCell;
 			sourceTree = "<group>";
 		};
 		2EA0FC8F2978227D006C1139 /* Model-RAWG */ = {

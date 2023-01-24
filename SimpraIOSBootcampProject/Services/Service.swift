@@ -45,14 +45,9 @@ class Service {
                 return
             }
             guard let data = data else {return}
-            
             do {
-                
                 let objects = try JSONDecoder().decode(T.self, from: data)
-               
                     completion(objects, nil)
-                
-                
             } catch let jsonErr {
                 completion(nil, jsonErr)
                 print("Failed to decode json:", jsonErr)
