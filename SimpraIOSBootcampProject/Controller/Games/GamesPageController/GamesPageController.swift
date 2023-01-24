@@ -46,33 +46,29 @@ class GamesPageController: BaseListController, UICollectionViewDelegateFlowLayou
         var group2: TopRatedGamesOf2022?
         var group3: TopRatedGamesOf2022?
         
-        // help you sync your data fetches together
+        // help us sync our data fetches together
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
         Service.shared.fetchTopRatedGames { (TopRatedGamesOf2022, err) in
-            print("Done with top grossing")
             dispatchGroup.leave()
             group1 = TopRatedGamesOf2022
         }
         
         dispatchGroup.enter()
         Service.shared.GamesBest{ (TopRatedGamesOf2022, err) in
-            print("Done with top grossing")
             dispatchGroup.leave()
             group2 = TopRatedGamesOf2022
         }
         
         dispatchGroup.enter()
         Service.shared.Games2001{ (TopRatedGamesOf2022, err) in
-            print("Done with top grossing")
             dispatchGroup.leave()
             group3 = TopRatedGamesOf2022
         }
         
         // completion
         dispatchGroup.notify(queue: .main) {
-            print("completed your dispatch group tasks...")
             
             self.activityIndicatorView.stopAnimating()
             

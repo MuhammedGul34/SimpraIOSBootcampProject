@@ -13,7 +13,6 @@ class FavouriteTableViewCell: UITableViewCell {
     
     var gameCore: SearchEntity! {
         didSet {
-    
             nameLabel.text = gameCore.map{$0.name ?? "Game"}
             releaseTimeLabel.text = gameCore.map{$0.released ?? "Game"}
             ratingLabel.text = gameCore.map{"ID: \($0.id)"}

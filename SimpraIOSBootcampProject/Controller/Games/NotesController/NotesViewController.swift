@@ -11,7 +11,6 @@ import CoreData
 class NotesViewController: UIViewController {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
     var gameNote: [NoteEntity]?
     
     private let tableView: UITableView = {
@@ -38,8 +37,6 @@ class NotesViewController: UIViewController {
 
  
 extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    
     override func viewDidAppear(_ animated: Bool) {super.viewDidAppear(true)
         getData()
     }
@@ -69,9 +66,7 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
             if result.count > 0 {
                 self.gameNote = result
                 self.tableView.reloadData()
-                print("Data Camed From CoreData\(result)")
             }
-           
         } catch {
             print("Error while retrieving data from cache.")
         }

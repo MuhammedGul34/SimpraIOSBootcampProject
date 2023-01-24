@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 
 class NoteTableViewCell: UITableViewCell {
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     var gameNote: NoteEntity! {
@@ -24,7 +23,6 @@ class NoteTableViewCell: UITableViewCell {
     }
     
     weak var viewController : NotesViewController? = nil
-    
     static let identifier = "NoteTableViewCell"
   
     var gamenametextField : UITextField = {
@@ -88,18 +86,16 @@ class NoteTableViewCell: UITableViewCell {
             }
                 do {
                     try context.save()
-                    print("success to save GameNotes to coredata")
                 } catch {
                     print("Error to save coredata",error)
                 }
-                
             } else {
                 let alert = UIAlertController(title: "Textfields cannot be nil!".localized(), message: "Please enter your comment before saving.".localized(), preferredStyle: UIAlertController.Style.alert)
                 
                 alert.addAction(UIAlertAction(title: "Oops!".localized(), style: .cancel))
-                viewController?.present(alert, animated: true, completion: nil)            }
+                viewController?.present(alert, animated: true, completion: nil)
+            }
         }
-        
     }
     
     

@@ -87,21 +87,5 @@ class FavouriteViewController: UITableViewController {
                 print("Error while retrieving data from cache.")
             }
         }
-    
-    
-//    func deleteAllRecords(entity : String) {
-//        let context = appDelegate.persistentContainer.viewContext
-//            let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-//            let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-//
-//            do {
-//                try context.execute(deleteRequest)
-//                try context.save()
-//            } catch {
-//                print ("There was an error")
-//            }
-//        }
-
-    
-}
+    }
 
