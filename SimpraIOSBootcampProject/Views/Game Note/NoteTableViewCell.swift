@@ -11,8 +11,7 @@ import CoreData
 class NoteTableViewCell: UITableViewCell {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    
+
     var gameNote: SearchEntity! {
         didSet {
             if let name = gameNote.map({$0.gameNameLabel}) {
@@ -43,7 +42,7 @@ class NoteTableViewCell: UITableViewCell {
         return TextField
     }()
     
-    let saveButton : UIButton = {
+    lazy var saveButton : UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Save", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -65,9 +64,7 @@ class NoteTableViewCell: UITableViewCell {
         contentView.addSubview(gameNoteTextField)
         contentView.addSubview(saveButton)
         
-        
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
