@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class FavouriteViewController: UITableViewController {
-    
+   
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var gameCore: [SearchEntity]?
     let cellId = "cellid"
@@ -33,8 +33,12 @@ class FavouriteViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {super.viewDidAppear(true)
-        retrieveFromCoreData()}
+        retrieveFromCoreData()
+    }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let _ = self.navigationController?.pushViewController(NotesViewController(), animated: true)
+           }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
        return 120
