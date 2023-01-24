@@ -1,5 +1,8 @@
 # SIMPRA Bootcamp Final Project
 
+## Important Warning
+• Instead of xcode project you need to open SimpraIOSBootcampProject.xcworkspace to run this project.
+
 ## Game List Screen
 • App displays this screen in the first place.
 
