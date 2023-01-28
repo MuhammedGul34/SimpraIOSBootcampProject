@@ -2,6 +2,7 @@
 
 ## Important Warning
 • Instead of xcode project you need to open SimpraIOSBootcampProject.xcworkspace to run this project.
+• At least you have to use 14.0 deployment
 
 ## Game List Screen
 • App displays this screen in the first place.
